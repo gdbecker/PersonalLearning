@@ -1,0 +1,25 @@
+<%- include("header") -%>
+<div class="row">
+  <div class="col-lg-3"></div>
+
+  <div class="col-lg-6">
+    <div class="box" id="heading">
+      <h1>Let's add a new list!</h1>
+    </div>
+
+    <div class="box">
+      <form class="item" action="/addList" method="POST">
+        <input type="text" name="newList" placeholder="New List Name" autocomplete="off">
+        <button class="add-button" type="submit" name="list" value="">+</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="col-lg-3"></div>
+
+</div>
+
+
+
+<%- include("footer") -%>

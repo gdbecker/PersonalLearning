@@ -1,0 +1,15 @@
+https://stackabuse.com/a-sqlite-tutorial-with-node-js/
+
+https://www.youtube.com/watch?v=xDYx5UdHwv0
+
+Chuck Dries (part 2: Node.js with SQLite start and setup)
+https://www.youtube.com/watch?v=qdV9S7UE99o
+^I used this one the most
+
+Chuck Dries (part 3: users and authentication)
+https://www.youtube.com/watch?v=hw5y9cjBJ_A&t=0s
+
+SQLite with bcrypt
+https://www.youtube.com/watch?v=9yIrM7eZwUE
+
+https://random-data-api.com/

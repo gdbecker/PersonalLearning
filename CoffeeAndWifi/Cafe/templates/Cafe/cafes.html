@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+    <h1>All Cafes</h1>
+
+	  <table class="table">
+          <thead>
+            <th>Cafe</th>
+            <th>Map</th>
+            <th>Image</th>
+            <th>Location</th>
+            <th>Opening Time</th>
+            <th>Closing Time</th>
+            <th>Coffee Rating</th>
+            <th>WiFi Rating</th>
+            <th>Power Rating</th>
+            <th>Seats</th>
+            <th>Has Toilet?</th>
+            <th>Can Take Calls?</th>
+            <th>Coffee Price</th>
+          </thead>
+          <tbody>
+            {% for c in cafe_list %}
+                <tr>
+                    <td>{{ c.name }}</td>
+                    <td><a href="{{ c.map_url }}">Maps Link</a></td>
+                    <td><a href="{{ c.img_url }}">Image Link</a></td>
+                    <td>{{ c.location }}</td>
+                    <td>{{ c.open_time }}</td>
+                    <td>{{ c.closing_time }}</td>
+                    <td>{{ c.coffee_rating }}</td>
+                    <td>{{ c.wifi_rating }}</td>
+                    <td>{{ c.power_rating }}</td>
+                    <td>{{ c.seats }}</td>
+
+                    {% if c.has_toilet == True %}
+                    <td>Yes</td>
+                    {% else %}
+                    <td>No</td>
+                    {% endif %}
+
+                    {% if c.can_take_calls == True %}
+                    <td>Yes</td>
+                    {% else %}
+                    <td>No</td>
+                    {% endif %}
+                    
+                    <td>${{ c.coffee_price|floatformat:2 }}</td>
+
+                    {% if user in c.users.all %}
+                    <td>Added!</td>
+                    {% else %}
+                    <td><a href="{% url 'Cafe:add_favorite' pk=c.pk %}" title="Add to Favorites">⭐</a></td>
+                    {% endif %}
+
+                    {% if user.is_superuser %}
+                    <td><a href="{% url 'Cafe:delete_cafe' pk=c.pk %}" title="Delete from Database">❌</a></td>
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+          </tbody>
+  	  </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

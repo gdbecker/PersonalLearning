@@ -1,0 +1,5 @@
+Potential solution for Google OAuth2.0 with sqlite
+https://github.com/jaredhanson/passport-google-oauth2
+
+Passport.js documentation
+https://www.passportjs.org/

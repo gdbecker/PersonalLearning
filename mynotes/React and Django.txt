@@ -1,0 +1,8 @@
+-While working on getting the React front end and Django backend to talk to each other, have both servers running at the same time
+-"python manage.py runserver" for Django
+-"npm start" for React
+
+-When ready, drag React front end folder into the Django project
+-cd into the React folder
+-"npm run build"
+-delete the build folder every time you want to make a new front end build to use

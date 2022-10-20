@@ -1,0 +1,6 @@
+Commands for setting up Django projects/apps (https://realpython.com/django-setup/)
+Make a new virtual environment: -m venv <env_name>
+Activate new virtual environment: activate <env_name>
+Make a new Django project: django-admin startproject <project_name>
+Make a new Django app within project: python manage.py startapp <app_name>
+Make a new superuser: python manage.py createsuperuser

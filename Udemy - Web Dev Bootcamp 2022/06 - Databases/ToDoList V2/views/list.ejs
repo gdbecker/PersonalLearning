@@ -1,0 +1,57 @@
+<%- include("header") -%>
+
+  <div class="row">
+    <div class="col-lg-3"></div>
+
+    <div class="col-lg-6">
+      <div class="box" id="heading">
+        <h1><%= dayTitle %></h1>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="box" id="heading">
+            <h1><%= listTitle %></h1>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="box">
+            <div class="dropdown list-options">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Your Lists
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <% allListNames.forEach(function(list) { %>
+                    <li><a class="dropdown-item" href="/<%= list.name %>"><%= list.name %></a></li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="box">
+        <% itemList.forEach(function(item) { %>
+          <div class="item">
+            <input type="checkbox">
+            <p><%= item.name %></p>
+            <form class="" action="/deleteItem/<%= listTitle %>/<%= item.id %>" method="POST">
+              <button class="delete-item" type="submit">❌</button>
+            </form>
+          </div>
+        <% }) %>
+
+        <form class="item" action="/newItem" method="POST">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+          <button class="add-button" type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="col-lg-3"></div>
+
+  </div>
+
+<%- include("footer") -%>

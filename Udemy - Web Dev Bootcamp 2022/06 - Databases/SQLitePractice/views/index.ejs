@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SQLite Practice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-4">
+        <h1>Hello!</h1>
+        <h2>Here are your messages:</h2>
+        <br>
+        <ul>
+          <% messages.forEach(function(m) { %>
+            <li><%= m.text %></li>
+          <% }) %>
+        </ul>
+        <br>
+      </div>
+
+      <div class="col-lg-8">
+        <h3>Add a message</h3>
+        <form action="/addMessage" method="POST">
+          <div class="form-group">
+            <label for="newMessage">Message</label>
+            <input type="text" class="form-control" id="newMessage" name="newMessage">
+          </div>
+          <button type="submit" class="btn btn-primary" name="button">Post</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

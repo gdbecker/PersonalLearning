@@ -1,0 +1,10 @@
+-- UP
+CREATE TABLE Users (
+  id INTEGER NOT NULL,
+  email STRING NOT NULL,
+  password STRING NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- DOwN
+DROP TABLE Users;

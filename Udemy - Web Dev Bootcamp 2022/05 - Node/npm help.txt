@@ -1,0 +1,4 @@
+To get started with npm in a project, run "npm init" in the terminal while you're in the desired project folder.
+Fill in all desired details, verify the new json file and confirm.
+
+Install a new npm package: "npm install <package_name>"

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1>Add a new cafe into the database</h1>
+
+      <!-- Form area -->
+      <form  method="POST">
+  			{% csrf_token %}
+  			{{ form|crispy }}
+  			<input type="submit" class="btn btn-default" value="Add Cafe">
+  		</form>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
