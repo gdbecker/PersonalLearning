@@ -40,6 +40,7 @@ public class Main {
 
         if (myVar == 0) {
             System.out.println("It's now zero.");
+            System.out.println("test");
         }
 
         //
