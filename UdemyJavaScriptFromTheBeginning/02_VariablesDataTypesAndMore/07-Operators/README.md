@@ -1,4 +1,4 @@
-## 07-Operators
+## 07 - Operators
 
 ### Topics Covered
 

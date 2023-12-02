@@ -1,4 +1,4 @@
-## 02-StatementsAndShortcuts
+## 02 - Statements and Shortcuts
 
 ### Keyboard shortcuts
 

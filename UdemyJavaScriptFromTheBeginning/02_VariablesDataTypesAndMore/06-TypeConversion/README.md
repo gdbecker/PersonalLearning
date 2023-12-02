@@ -1,4 +1,4 @@
-## 06-TypeConversion
+## 06 - Type Conversion
 
 ### Topics Covered
 

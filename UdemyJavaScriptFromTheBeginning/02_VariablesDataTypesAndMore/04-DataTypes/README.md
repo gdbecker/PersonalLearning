@@ -1,4 +1,4 @@
-## 04-DataTypes
+## 04 - Data Types
 
 ### Primitive Data Types
 
