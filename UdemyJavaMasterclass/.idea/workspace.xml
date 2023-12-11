@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ad82946c-0aad-4973-8964-b29b13bcab2e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01 - Intro/Getting Started Introduction To The Course.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/_01 - Intro/Getting Started Introduction To The Course.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01 - Intro/Slides-Getting-Started-Remaster-in-Progress.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/_01 - Intro/Slides-Getting-Started-Remaster-in-Progress.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01 - Intro/Slides-Programming-Tools-Setup-Confirming-installation-and-ntro-to-JShell.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/_01 - Intro/Slides-Programming-Tools-Setup-Confirming-installation-and-ntro-to-JShell.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 - IntelliJ Basics/src/Challenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/_03 - IntelliJ Basics/src/Challenge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 - IntelliJ Basics/src/FirstClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/_03 - IntelliJ Basics/src/FirstClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 - IntelliJ Basics/src/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/_03 - IntelliJ Basics/src/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 - IntelliJ Basics/src/SecondClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/_03 - IntelliJ Basics/src/SecondClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04 - Expressions, Statements, and more/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/_04 - Expressions-Statements-And-More/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UdemyJavaMasterclass/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UdemyJavaMasterclass/Main.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2OZc4xiuRLZJvesvCZf4ueapPVp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "adopt-11",
+    "last_opened_file_path": "/Users/garrettbecker/GitHub/PersonalLearning/UdemyJavaMasterclass",
+    "settings.editor.selected.configurable": "editor.preferences.appearance"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/03 - IntelliJ Basics (or VS Code)/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DigitSumChallenge">
+    <configuration name="DigitSumChallenge" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DigitSumChallenge" />
+      <module name="_05 - Control Flow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ForChallenge" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ForChallenge" />
+      <module name="_05 - Control Flow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Sum3And5Challenge" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Sum3And5Challenge" />
+      <module name="_05 - Control Flow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WhileChallenge" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WhileChallenge" />
+      <module name="_05 - Control Flow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WhileStatements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WhileStatements" />
+      <module name="_05 - Control Flow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DigitSumChallenge" />
+        <item itemvalue="Application.WhileChallenge" />
+        <item itemvalue="Application.WhileStatements" />
+        <item itemvalue="Application.Sum3And5Challenge" />
+        <item itemvalue="Application.ForChallenge" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad82946c-0aad-4973-8964-b29b13bcab2e" name="Changes" comment="" />
+      <created>1681771357151</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681771357151</updated>
+    </task>
+    <servers />
+  </component>
+</project>
