@@ -1,0 +1,28 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:* npx static-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@types/faker": "^6.6.9",
+    "@types/google.maps": "^3.54.10",
+    "@types/node": "^18.19.3",
+    "concurrently": "^8.2.2",
+    "node-fetch": "^3.2.6",
+    "nodemon": "^3.0.2",
+    "static-server": "^2.2.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3"
+  }
+}
