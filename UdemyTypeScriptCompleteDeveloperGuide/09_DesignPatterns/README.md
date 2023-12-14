@@ -1,6 +1,6 @@
 ## Design Patterns with TypeScript
 
-### [Live Demo](https://replit.com/@gdbecker/TypeScript-Map-App)
+### [Live Demo](https://typescript-map-app.gdbecker.repl.co/)
 
 !["HomePage"](HomePage.png)
 
