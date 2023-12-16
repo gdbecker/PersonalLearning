@@ -10,10 +10,12 @@
 - Combined TypeScript with React and Redux tools to utilize type definitions and annotations
 
 ### Tools and Packages Used
+
 - [React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
 - [Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
 
 ### Pros and Cons of using TypeScript with React
+
 - Pros
   - Far, far easier to avoid extremely common typos, like incorrect action types
   - Gives developers a far better understanding of the type of data flowing around
@@ -23,10 +25,3 @@
   - TOns of generics flying around
   - Tons of imports, as just about everything (action creator, action, reducer, store, component) need to be aware of different types
   - Redux inherently functional in nature, tough integration with TypeScript classes
-
-### Other Notes
-
-- Use "tsc --init" in the terminal to make a "tsconfig.json" file
-- rootdir -> './src'
-- outdir -> './build'
-- Use "tsc -w" in the terminal to open the "watch" mode to detect any changes in the src folder, which will then transform the .ts files into .js files
