@@ -40,6 +40,6 @@
 ### Other Notes
 
 - Will the file contain a React component or any kind of JSX?
-  - Use the extention '.tsx'
+  - Use the extension '.tsx'
 - No JSX?
   - Use the extension '.ts'
