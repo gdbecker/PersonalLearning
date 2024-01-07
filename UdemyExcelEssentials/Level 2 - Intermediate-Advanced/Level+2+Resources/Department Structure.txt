@@ -1,0 +1,201 @@
+Employee Number	Department	Job Title
+MNC-0001	Directorate	CEO
+MNC-0002	Directorate	Director of Customer Services
+MNC-0003	Directorate	Director of Finance
+MNC-0004	Directorate	Director of Logistics
+MNC-0005	Directorate	Director of Marketing
+MNC-0006	Directorate	Director of Procurement
+MNC-0007	Directorate	Director of Quality
+MNC-0008	Directorate	Director of Sales
+MNC-0009	Customer Services	Customer Services Manager
+MNC-0010	Finance	Finance Manager
+MNC-0011	Logistics	Logistics Manager
+MNC-0012	Marketing	Marketing Manager
+MNC-0013	Procurement	Procurement Manager
+MNC-0014	Directorate	PA to CEO
+MNC-0015	Sales	Sales Manager
+MNC-0016	Logistics	Logistics Supervisor
+MNC-0017	Sales	Sales Supervisor North
+MNC-0018	Sales	Sales Supervisor East
+MNC-0019	Sales	Sales Supervisor South
+MNC-0020	Sales	Sales Supervisor West
+MNC-0021	Procurement	Senior Buyer
+MNC-0022	Quality	Quality Manager
+MNC-0023	Sales	Sales North
+MNC-0024	Sales	Sales North
+MNC-0025	Sales	Sales North
+MNC-0026	Finance	Accounts Payable
+MNC-0027	Sales	Sales South
+MNC-0028	Sales	Sales East
+MNC-0029	Logistics	Warehouse Operative
+MNC-0030	Logistics	Driver
+MNC-0031	Logistics	Goods In Operative
+MNC-0032	Procurement	Buyer
+MNC-0033	Logistics	Goods In Operative
+MNC-0034	Customer Services	Telesales Operative
+MNC-0035	Customer Services	Telesales Operative
+MNC-0036	Customer Services	Telesales Operative
+MNC-0037	Finance	Accounts Receivable
+MNC-0038	Customer Services	Telesales Operative
+MNC-0039	Sales	Sales North
+MNC-0040	Sales	Sales South
+MNC-0041	Logistics	Goods In Operative
+MNC-0042	Logistics	Driver
+MNC-0043	Logistics	Warehouse Operative
+MNC-0044	Sales	Sales East
+MNC-0045	Customer Services	Telesales Operative
+MNC-0046	Logistics	Driver
+MNC-0047	Quality	Quality Supervisor
+MNC-0048	Procurement	Senior Buyer
+MNC-0049	Customer Services	Telesales Operative
+MNC-0050	Finance	Accounts Receivable
+MNC-0051	Customer Services	Telesales Operative
+MNC-0052	Logistics	Driver
+MNC-0053	Logistics	Warehouse Operative
+MNC-0054	Customer Services	Telesales Operative
+MNC-0055	Customer Services	Telesales Operative
+MNC-0056	Logistics	Warehouse Operative
+MNC-0057	Customer Services	Telesales Operative
+MNC-0058	Sales	Sales East
+MNC-0059	Logistics	Warehouse Operative
+MNC-0060	Logistics	Goods In Operative
+MNC-0061	Logistics	Driver
+MNC-0062	Customer Services	Telesales Operative
+MNC-0063	Customer Services	Telesales Operative
+MNC-0064	Finance	Accounts Payable
+MNC-0065	Customer Services	Telesales Operative
+MNC-0066	Logistics	Warehouse Operative
+MNC-0067	Customer Services	Telesales Operative
+MNC-0068	Procurement	Junior Buyer
+MNC-0069	Sales	Sales North
+MNC-0070	Logistics	Goods In Operative
+MNC-0071	Finance	Accounts Payable
+MNC-0072	Logistics	Warehouse Operative
+MNC-0073	Logistics	Driver
+MNC-0074	Finance	Accounts Receivable
+MNC-0075	Sales	Sales West
+MNC-0076	Quality	Quality Assurance Operative
+MNC-0077	Procurement	Purchasing Administrator
+MNC-0078	Customer Services	Telesales Operative
+MNC-0079	Sales	Sales South
+MNC-0080	Sales	Sales South
+MNC-0081	Directorate	PA to Director of Customer Services
+MNC-0082	Logistics	Driver
+MNC-0083	Directorate	PA to Director of Finance
+MNC-0084	Logistics	Driver
+MNC-0085	Logistics	Driver
+MNC-0086	Finance	Accounts Receivable
+MNC-0087	Customer Services	Telesales Operative
+MNC-0088	Logistics	Driver
+MNC-0089	Customer Services	Telesales Operative
+MNC-0090	Customer Services	Telesales Operative
+MNC-0091	Logistics	Driver
+MNC-0092	Customer Services	Telesales Operative
+MNC-0093	Customer Services	Telesales Operative
+MNC-0094	Customer Services	Telesales Operative
+MNC-0095	Customer Services	Telesales Operative
+MNC-0096	Logistics	Driver
+MNC-0097	Finance	Accounts Payable
+MNC-0098	Quality	Quality Assurance Operative
+MNC-0099	Sales	Sales West
+MNC-0100	Directorate	PA to Director of Logistics
+MNC-0101	Logistics	Driver
+MNC-0102	Customer Services	Telesales Operative
+MNC-0103	Customer Services	Telesales Operative
+MNC-0104	Customer Services	Telesales Operative
+MNC-0105	Logistics	Driver
+MNC-0106	Logistics	Driver
+MNC-0107	Finance	Accounts Receivable
+MNC-0108	Finance	Accounts Receivable
+MNC-0109	Quality	Quality Assurance Operative
+MNC-0110	Marketing	Marketing Assistant
+MNC-0111	Directorate	PA to Director of Marketing
+MNC-0112	Customer Services	Telesales Operative
+MNC-0113	Customer Services	Telesales Operative
+MNC-0114	Customer Services	Telesales Operative
+MNC-0115	Customer Services	Telesales Operative
+MNC-0116	Quality	Quality Assurance Operative
+MNC-0117	Logistics	Driver
+MNC-0118	Sales	Sales West
+MNC-0119	Finance	Accounts Payable
+MNC-0120	Directorate	PA to Director of Procurement
+MNC-0121	Procurement	Purchasing Administrator
+MNC-0122	Customer Services	Telesales Operative
+MNC-0123	Customer Services	Telesales Operative
+MNC-0124	Customer Services	Telesales Operative
+MNC-0125	Customer Services	Telesales Operative
+MNC-0126	Customer Services	Telesales Operative
+MNC-0127	Finance	Accounts Receivable
+MNC-0128	Sales	Sales West
+MNC-0129	Customer Services	Telesales Operative
+MNC-0130	Marketing	Social Media Marketeer
+MNC-0131	Customer Services	Telesales Operative
+MNC-0132	Customer Services	Telesales Operative
+MNC-0133	Customer Services	Telesales Operative
+MNC-0134	Quality	Quality Assurance Operative
+MNC-0135	Logistics	Driver
+MNC-0136	Sales	Sales West
+MNC-0137	Marketing	Direct Marketeer
+MNC-0138	Finance	Accounts Payable
+MNC-0139	Logistics	Driver
+MNC-0140	Customer Services	Telesales Operative
+MNC-0141	Customer Services	Telesales Operative
+MNC-0142	Customer Services	Telesales Operative
+MNC-0143	Sales	Sales South
+MNC-0144	Logistics	Driver
+MNC-0145	Finance	Accounts Receivable
+MNC-0146	Customer Services	Telesales Operative
+MNC-0147	Directorate	PA to Director of Quality
+MNC-0148	Customer Services	Telesales Operative
+MNC-0149	Customer Services	Telesales Operative
+MNC-0150	Customer Services	Telesales Operative
+MNC-0151	Logistics	Driver
+MNC-0152	Quality	Quality Assurance Operative
+MNC-0153	Customer Services	Telesales Operative
+MNC-0154	Marketing	Direct Marketeer
+MNC-0155	Directorate	PA to Director of Sales
+MNC-0156	Customer Services	Telesales Operative
+MNC-0157	Customer Services	Telesales Operative
+MNC-0158	Logistics	Driver
+MNC-0159	Customer Services	Telesales Operative
+MNC-0160	Customer Services	Telesales Operative
+MNC-0161	Finance	Accounts Payable
+MNC-0162	Sales	Sales South
+MNC-0163	Customer Services	Telesales Operative
+MNC-0164	Customer Services	Telesales Operative
+MNC-0165	Customer Services	Telesales Operative
+MNC-0166	Customer Services	Telesales Operative
+MNC-0167	Logistics	Driver
+MNC-0168	Sales	Sales West
+MNC-0169	Marketing	Direct Marketeer
+MNC-0170	Customer Services	Telesales Operative
+MNC-0171	Logistics	Driver
+MNC-0172	Customer Services	Telesales Operative
+MNC-0173	Customer Services	Telesales Operative
+MNC-0174	Customer Services	Telesales Operative
+MNC-0175	Customer Services	Telesales Operative
+MNC-0176	Customer Services	Telesales Operative
+MNC-0177	Customer Services	Telesales Operative
+MNC-0178	Finance	Accounts Receivable
+MNC-0179	Logistics	Driver
+MNC-0180	Sales	Sales North
+MNC-0181	Logistics	Driver
+MNC-0182	Customer Services	Telesales Operative
+MNC-0183	Customer Services	Telesales Operative
+MNC-0184	Customer Services	Telesales Operative
+MNC-0185	Sales	Sales North
+MNC-0186	Finance	Accounts Receivable
+MNC-0187	Logistics	Driver
+MNC-0188	Customer Services	Telesales Operative
+MNC-0189	Logistics	Driver
+MNC-0190	Customer Services	Telesales Operative
+MNC-0191	Customer Services	Telesales Operative
+MNC-0192	Sales	Sales North
+MNC-0193	Sales	Sales North
+MNC-0194	Customer Services	Telesales Operative
+MNC-0195	Customer Services	Telesales Operative
+MNC-0196	Customer Services	Telesales Operative
+MNC-0197	Customer Services	Telesales Operative
+MNC-0198	Customer Services	Telesales Operative
+MNC-0199	Logistics	Driver
+MNC-0200	Customer Services	Telesales Operative

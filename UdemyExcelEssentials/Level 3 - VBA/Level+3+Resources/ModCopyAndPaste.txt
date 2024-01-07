@@ -1,0 +1,70 @@
+Private Sub TestingThis()
+'Paste the snippets of code below in here to test them
+
+
+
+End Sub
+
+Private Sub CopyingAndPasting()
+'Note: All the "Simple" Copy/Paste get everything (formats included)
+'See the PasteSpecial code a little further down to avoid this
+
+'************ SIMPLE COPY/PASTE ************
+
+'Simple Copy and pasting on the same sheet
+
+'Source range    Destination Range
+Range("A1").Copy Range("B1")
+'Source range    Destination Range
+Range("A1:A3").Copy Range("B1:B3")
+'Alternative method
+Range("A1:A3").Copy Range("B1")
+
+
+'Simple Copy and pasting on another sheet (same workbook)
+
+'Source sheet, and   range            Destination sheet & range
+Worksheets("Sheet1").Range("A1").Copy Worksheets("Sheet2").Range("A1")
+
+
+'Simple Copy and pasting on another sheet (same workbook)
+
+'Specify Workbook name, Sheet name, and Range on BOTH sides of the "Copy"
+Workbooks("Book1.xlsx").Worksheets("Sheet1").Range("A1").Copy _
+        Workbooks("My Macro Book.xlsm").Worksheets("Sheet2").Range("B1")
+        
+'As above, but using the "Current Region" property
+Workbooks("Book1.xlsx").Worksheets("Sheet1").Range("A1").CurrentRegion.Copy _
+        Workbooks("My Macro Book.xlsm").Worksheets("Sheet2").Range("B1")
+
+
+
+
+
+'************ COPY/PASTE (SPECIAL) ************
+
+'NOTE: While single line copy/pastes do NOT produce marching ants
+'Seperate line copy/pastes do. Remove the marching ants with this:
+Application.CutCopyMode = False
+
+
+'Copy/Paste the FORMATTING with PasteSpecial
+'Source
+Range("A1").Copy
+'Destination             paste only the formatting
+Range("B1").PasteSpecial xlPasteFormats
+'Remove marching ants
+Application.CutCopyMode = False
+
+
+'Copy/Paste the VALUE with PasteSpecial
+'Source
+Range("A1").Copy
+'Destination             paste only the value (not the formula)
+Range("B1").PasteSpecial xlPasteValues
+'Remove marching ants
+Application.CutCopyMode = False
+
+
+
+End Sub

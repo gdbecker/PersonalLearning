@@ -1,0 +1,471 @@
+Sub BasicsTestingThis()
+'Paste the snippets of code below in here to test them
+
+
+
+End Sub
+
+Private Sub TheBasics()
+
+'************ CELLS ************
+
+
+'The "Range" object
+
+'Selects the cell named in quotes
+Range("A5").Select
+
+'Selects a single range of cells as named in the quotes
+Range("A5:A14").Select
+
+'Selects none-contiguous individual cells named in quotes
+Range("A5,B7,C9").Select
+
+'Selects a range of none-contiguous cells named in quotes
+Range("A5:B5,A7:C7,A9:C10").Select
+
+
+
+'The "Cells" Object
+
+'Selects the cell 1 ROW in and 1 COLUMN across (A1)
+Cells(1, 1).Select
+
+'Selects the cell 5 ROWS in and 1 COLUMN across (A5)
+Cells(5, 1).Select
+
+'Selects A1:A14 using the Cells object
+Range(Cells(5, 1), Cells(14, 1)).Select
+
+
+'The ACTIVECELL property
+
+'Bolds the font of the activecell
+ActiveCell.Font.Bold = True
+
+
+
+'The OFFSET Property
+
+'Selects the cell offset from a specific cell
+'using OFFSET (ROW, COLUMN)...
+'Negative numbers move UP (ROW), LEFT (COLUMN)
+Range("A5").Offset(1, 0).Select
+'Using the activecell (same row, 1 column to the right)
+ActiveCell.Offset(0, 1).Select
+
+
+
+'The END Property (Moving around dynamically)
+
+'MOVING RIGHT
+'Moving to end of range (recorded version CTRL right arrow)
+Range("A5").Select
+Selection.End(xlToRight).Select
+'As above, but stating the start cell
+Range("A5").End(xlToRight).Select
+'As above, but using the active cell
+ActiveCell.End(xlToRight).Select
+
+'Moving LEFT
+'Moving to start of range (recorded version CTRL left arrow)
+Range("D5").Select
+Selection.End(xlToLeft).Select
+'As above, but stating the start cell
+Range("D5").End(xlToLeft).Select
+'As above, but using the active cell
+ActiveCell.End(xlToLeft).Select
+
+'Moving UP
+'Moving to top of range (recorded version CTRL up arrow)
+Range("D5").Select
+Selection.End(xlUp).Select
+'As above, but stating the start cell
+Range("D5").End(xlUp).Select
+'As above, but using the active cell
+ActiveCell.End(xlUp).Select
+
+'Moving DOWN
+'Moving to top of range (recorded version CTRL down arrow)
+Range("D5").Select
+Selection.End(xlDown).Select
+'As above, but stating the start cell
+Range("D5").End(xlDown).Select
+'As above, but using the active cell
+ActiveCell.End(xlDown).Select
+
+'Select the last row
+Range("A1048576").End(xlUp).Select
+
+'Select the first blank row after the last row.
+Range("A1048576").End(xlUp).Offset(1, 0).Select
+
+
+
+'Dynamic Range Selection
+
+'Selecting DOWN
+'Selecting from a specific cell (A5), to the...
+'...BOTTOM of the current range (recorded Macro version)
+Range("A5").Select
+Range(Selection, Selection.End(xlDown)).Select
+'As above, but using "Range("A5")" AS the selection
+Range(Range("A5"), Range("A5").End(xlDown)).Select
+'As above, but using ACTIVECELL as the selection...
+'...ActiveCell being whichever cell is currently selected
+Range(ActiveCell, ActiveCell.End(xlDown)).Select
+
+'Selecting UP
+'Selecting from a specific cell (A5), to the...
+'...TOP of the current range (recorded Macro version)
+Range("A10").Select
+Range(Selection, Selection.End(xlUp)).Select
+'As above, but using "Range("A5")" AS the selection
+Range(Range("A10"), Range("A10").End(xlUp)).Select
+'As above, but using ACTIVECELL as the selection...
+'...ActiveCell being whichever cell is currently selected
+Range(ActiveCell, ActiveCell.End(xlUp)).Select
+
+'Selecting RIGHT
+'Selecting from a specific cell (A5), to the...
+'...RIGHT of the current range (recorded Macro version)
+Range("A5").Select
+Range(Selection, Selection.End(xlToRight)).Select
+'As above, but using "Range("A5")" AS the selection
+Range(Range("A5"), Range("A5").End(xlToRight)).Select
+'As above, but using ACTIVECELL as the selection...
+'...ActiveCell being whichever cell is currently selected
+Range(ActiveCell, ActiveCell.End(xlToRight)).Select
+
+'Selecting LEFT
+'Selecting from a specific cell (A5), to the...
+'...LEFT of the current range (recorded Macro version)
+Range("D5").Select
+Range(Selection, Selection.End(xlToLeft)).Select
+'As above, but using "Range("A5")" AS the selection
+Range(Range("D5"), Range("D5").End(xlToLeft)).Select
+'As above, but using ACTIVECELL as the selection...
+'...ActiveCell being whichever cell is currently selected
+Range(ActiveCell, ActiveCell.End(xlToLeft)).Select
+
+
+
+'The CURRENT REGION Property
+
+'Selects the current range around the chosen cell
+Range("A5").CurrentRegion.Select
+'Does the same thing using CELLS
+Cells(5, 1).CurrentRegion.Select
+'Does the same thing based on the currently active cell
+ActiveCell.CurrentRegion.Select
+
+
+'SELECT Method Vs. ACTIVATE Method
+'Sometimes they achieve exactly the same thing
+' Select A5 to A14 in Excel then execute this code
+Range("A9").Select
+' Select A5 to A14 in Excel then execute this code
+Range("A9").Activate
+'A9 becomes the activecell (even though it's not SELECTed)
+
+
+
+
+'************ SHEETS ************
+
+'Moving between
+
+'The NEXT and PREVIOUS Properties
+
+'MOVING between sheets
+'Move from the active sheet to next sheet RIGHT
+ActiveSheet.Next.Select
+'Move from the active sheet to next sheet Left
+ActiveSheet.Previous.Select
+
+'Selecting a sheet by TAB name
+Sheets("Sheet2").Select
+
+'Accessing a sheet by VB CODE name (Defined in "Properties" window)
+MySecondSheet.Select
+
+'Selecting a sheet by its INDEX number
+'...Index 1 is the first sheet, 2 is the second and so on
+Sheets(1).Select
+
+'Getting the names...
+
+'Get the TAB name of the active sheet
+MyName = ActiveSheet.Name
+
+'Get the VB Code Name of the Active SheetMyName = ActiveSheet.CodeName'Renaming
+
+'Renaming the TAB name (the one visible from Excel)
+ActiveSheet.Name = "This Is My TAB Name"'Assign a VB Code Name to the active sheetThisWorkbook.VBProject.VBComponents(ActiveSheet.CodeName).Name = "WhateveYouWant"
+
+
+
+'SHEETS Object Vs. WORKSHEETS Object
+'A WORKSheet is the regular EXCEL sheet
+'A SHEET is ANY kind of sheet
+'Go to Excel, and hit F11 to add a Chart sheet then run this code
+
+Sheets("Sales Data").Select     'Works as "Sheets" recognises ALL sheet elements
+Sheets("Chart1").Select         'Works as "Sheets" recognises ALL sheet elements
+Worksheets("Sales Data").Select 'Works as "Sales Data" is a regular Excel sheet
+Worksheets("Chart1").Select     'Fails as "Chart1" is NOT a regular Excel sheet
+
+
+
+
+'************ WORKBOOKS ************
+
+'Activating the current workbook (where the code resides)
+ThisWorkbook.Activate
+
+'Activate the named workbook (case insensitive, extension can be omitted)
+Workbooks("My Macro Book").Activate
+'Activate the workbook at Index position 1
+'Note the index number is the order in which you opened the workbooks
+Workbooks(1).Activate
+
+'NOTE: You must ACTIVATE a different Workbook, before you can select its sheets
+'This will work...
+'Activate the named workbook (case insensitive)
+Workbooks("Book1").Activate     'Activate the other workbook...
+Sheets("Sheet2").Select         'THEN select the sheet (NOTE: we need NOT specify
+                                'the workbook name again as it is
+                                'now the ACTIVE workbook)
+'This will not...
+Workbooks("Book1").Sheets("Sheet2").Select
+
+
+
+
+'************ WRITING TO CELLS ************
+
+'The VALUE Property
+
+'Writing to a single cell using the address
+Range("A1").Value = "Hello World"
+
+'Writing to a range using the address
+Range("B2:G11").Value = "Hello World 2"
+
+'Writing to a single cell using CELLS
+Cells(13, 1).Value = "This is A13"
+
+'Entering a number (NOTE: No quotes needed)
+Range("A1").Value = 1234
+
+'Writing to a single cell using the sheet VB Code Name and cell address
+MySecondSheet.Range("A1").Value = "I did this from sheet 1!"
+
+'Writing to a single cell in another workbook (NOTE hierarchy)
+Workbooks("Book1.xlsx"). _
+    Sheets("Sheet1"). _
+        Range("A1").Value = "I did this from another workbook!"
+
+'Writing a variable value to a single cell
+'Variable that will hold the value of the active cell
+MyFirstVariable = "What a lovely day :)"
+'Write that value to cell A1
+Range("A1").Value = MyFirstVariable
+
+
+
+
+'************ READING AND WRITING VALUES FROM CELLS ************
+
+'Writing the value of one cell to another
+Range("B1").Value = Range("A1").Value
+
+'Writing the value of one range to another
+Range("B1:B5").Value = Range("A1:A5").Value
+
+'Writing a variable value to a cell
+'Variable that will hold the value of the active cell
+MyFirstVariable = ActiveCell.Value
+'Write that value to cell G18
+Range("G18").Value = MyFirstVariable
+
+
+
+
+'************ COMMONLY USED PROPERTIES ************
+
+'The FONT Property
+
+'Set the font in A1 to bold
+Range("A1").Font.Bold = True
+Range("A1").Font.Bold = False
+
+'Set the font in A1 to bold
+Range("A1").Font.FontStyle = "Bold"
+'Set the font in A1 to regular
+Range("A1").Font.FontStyle = "Regular"
+'Setting more than 1 attribute using FontStyle
+Range("A1").Font.FontStyle = "Bold italic"
+
+
+'The INTERIOR Property
+Range("A1").Interior.Color = vbRed
+
+
+'************ MORE USEFUL PROPERTIES ************
+'ADDRESS / ROW / COLUMN
+
+'The ADDRESS Property
+
+'Get the address of the activce cell
+MyCellAddress = ActiveCell.Address
+
+'Get last cell address in the range DOWN from A5 (here)
+MyLastRowAddress = Range("A5").End(xlDown).Address
+
+'Get last cell address in the range RIGHT from A5 (here)
+MyLastColumnAddress = Range("A5").End(xlToRight).Address
+
+'Get last row address starting from the bottom, and moving up
+MyVeryLastRowAddress = Range("A1048576").End(xlUp).Address
+
+'Get the address of the first blank row AFTER the last row.
+MyFirstBlankAddress = Range("A1048576").End(xlUp).Offset(1, 0).Address
+
+
+'The ROW Property
+
+'Get the row number of the active cell
+MyRowNumber = ActiveCell.Row
+
+'Get last row number in the range from moving down from A5
+MyLastRow = Range("A5").End(xlDown).Row
+
+
+
+'The COLUMN Property
+
+'Get the column NUMBER of the active cell
+MyColumnNumber = ActiveCell.Column
+
+'Get last column number in the range from moving down from A5 (here)
+MyLastColumn = Range("A5").End(xlToRight).Column
+
+
+
+'Get the column LETTER of the active cell
+MyColumnLetter = Split(ActiveCell.Address, "$")(1)
+
+'Get the row number of the active cell (alternative method)
+MyRowNumber = Split(ActiveCell.Address, "$")(2)
+
+
+
+
+'************ EVEN MORE USEFUL PROPERTIES ************
+
+'Get the Windows User Name
+MyUserName = Environ$("UserName")
+
+'Get the active workbook name (Note "Active", not necessarily THIS workbook. See below)
+MyWorkBookName = ActiveWorkbook.Name
+
+'Get this workbook name (Not necessarily the "Active" workbook)
+ThisWorkBookName = ThisWorkbook.Name
+
+'Get the path to the active workbook
+MyPath = ActiveWorkbook.Path
+
+'Get the path to this workbook
+MyPath = ThisWorkbook.Path
+
+'Get the path to the active workbook and append the name of the workbook
+MyFullName = ActiveWorkbook.FullName
+
+'Get the path to this workbook and append the name of the workbook
+MyFullName = ThisWorkbook.FullName
+
+'Get the current sheet name
+MySheetName = ActiveSheet.Name
+
+'Get the active cell address
+MyCell = ActiveCell.Address
+
+'Get the various properties of the active workbook
+MyVariousAttributes = ActiveWorkbook.BuiltinDocumentProperties("Application Name")
+MyVariousAttributes = ActiveWorkbook.BuiltinDocumentProperties("Author")
+MyVariousAttributes = ActiveWorkbook.BuiltinDocumentProperties("Company")
+MyVariousAttributes = ActiveWorkbook.BuiltinDocumentProperties("Creation Date")
+MyVariousAttributes = ActiveWorkbook.BuiltinDocumentProperties("Last Author")
+MyVariousAttributes = ActiveWorkbook.BuiltinDocumentProperties("Last Save Time")
+
+
+'Get count of the number of sheets in the workbook
+MyCount = ActiveWorkbook.Sheets.Count   'or
+MyCount = Sheets.Count                  '...if you know you're in the correct workbook
+
+'Get the sheet index number of the current sheet
+MySheetNumber = ActiveSheet.Index
+
+'Get count of the number of open workbooks
+OpenWorkBookCount = Application.Workbooks.Count
+
+
+
+
+'************ OPENING AND CLOSING WORKBOOKS ************
+'Opening workbooks
+
+'Opening a workbook
+Workbooks.Open Filename:="C:\Users\Alan\Desktop\Book1.xlsx"
+
+'Opening a workbook as read only
+Workbooks.Open Filename:= _
+    "C:\Users\Alan\Desktop\Book1.xlsx", _
+        ReadOnly:=True
+
+'Opening a password protected workbook
+Workbooks.Open Filename:= _
+    "C:\Users\Alan\Desktop\Password Protected.xlsx", _
+        Password:="Hello"
+       
+'Additional parameters when opening
+'Seperate with commas (these can be combined)
+'
+'UpdateLinks:=0     Does NOT update any external references or links (default)
+'UpdateLinks:=3     DOES update any external references or links
+'
+'Notify:=True       If file is locked, opens as read only, and notifies when free
+'Notify:=False      Default...doesn't do the above
+'
+'AddtoMRU:=True     'Add the opened file to the "Most Recently Used" list (default)
+'AddtoMRU:=False    'Doesn't add the file to the "Most Recently Used" list
+
+'Using the "Open File Dialogue"
+
+'Display the open file dialogue box, and
+'capture the name of the clicked file
+MyFile = Application.GetOpenFilename()
+'Open the file selected
+Workbooks.Open (MyFile)
+
+
+
+'Closing workbooks
+
+'Closes the activeworkbook (will ask about changes)
+ActiveWorkbook.Close
+
+'Closes workbook by index (the order in which it was opened)
+Workbooks(1).Close
+
+'Closes the activeworkbook (will save changes)
+ActiveWorkbook.Close savechanges:=True
+
+'Closes the activeworkbook (will NOT save changes)
+ActiveWorkbook.Close savechanges:=False
+
+
+
+
+End Sub

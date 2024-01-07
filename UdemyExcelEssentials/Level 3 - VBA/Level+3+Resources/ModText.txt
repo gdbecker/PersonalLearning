@@ -1,0 +1,14 @@
+Private Sub Text()
+
+
+
+
+'Changing Case
+'Convert the users entry to Upper case
+Range("A1").Value = UCase(Range("A1").Value)
+'Convert the users entry to Lower case
+Range("A1").Value = LCase(Range("A1").Value)
+'Convert the users entry to Proper Case
+Range("A1").Value = Application.WorksheetFunction.Proper(Range("A1").Value)
+
+End Sub

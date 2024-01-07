@@ -1,0 +1,24 @@
+CREATE DATABASE Adventureworks
+
+-- Create a new table called 'customers'
+CREATE TABLE customers(
+    customer_id SERIAL PRIMARY KEY,
+    name VARCHAR (50) NOT NULL,
+    location VARCHAR (50) NOT NULL,
+    email VARCHAR (50) NOT NULL
+);
+
+-- Insert rows into table 'customers'
+INSERT INTO customers
+    (customer_id, name, location, email)
+VALUES
+    ( 1, 'Orlando', 'Australia', ''),
+    ( 2, 'Keith', 'India', 'keith0@adventure-works.com'),
+    ( 3, 'Donna', 'Germany', 'donna0@adventure-works.com'),
+    ( 4, 'Janet', 'United States','janet1@adventure-works.com');
+
+-- Select rows from table 'customers'
+SELECT * FROM customers;
+
+
+

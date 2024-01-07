@@ -1,0 +1,353 @@
+'This module provides the most common loical testing methods
+Dim X As Integer                'A simple counter used for loops (available to all subs in this module)
+Dim MyLastRow As Integer        'Gets the last row numbber fo For...Next loop
+
+
+'Logical tests using a single If
+
+
+Sub Logical1A()
+'Simple logical test using a single If & the Range object
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Range("B2").Select
+    
+    'While the activecell isn't blank...
+    While ActiveCell.Value <> ""
+        
+        'The logical test...
+        'If the value of the activecell is "Male", the write "It's a MAN!" in column G
+        If ActiveCell.Value = "Male" Then ActiveCell.Offset(0, 5).Value = "It's a MAN!"
+        'Move down a cell
+        ActiveCell.Offset(1, 0).Select
+    
+    'End of loop
+    Wend
+
+End Sub
+
+
+Sub Logical1B()
+
+'*************************************** Programming Project
+'Copy and paste Sub Logical1A() in here, and convert it to display a message if the value DOES NOT equal Male
+'Don't just change Male to Female!!!
+
+End Sub
+
+
+Sub Logical1C()
+'Simple logical test using a single If & the Cells object
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Cells(2, 2).Select
+    
+    'Loop with 50 iterations
+    For X = 1 To 50
+    
+        'The logical test...
+        'If the value of the cell (X+1, column B) is "Male", then write "It's a MAN!" in column G
+        If Cells(X + 1, 2) = "Male" Then Cells(X + 1, 7).Value = "It's a MAN!"
+        'Notice there is no need to offset, as the "X" value in Cells increases with each pass through the loop
+        
+    'End of loop
+    Next
+
+End Sub
+
+
+
+'Logical tests using a If/Then/Else
+
+
+Sub Logical2A()
+'Simple logical test using a If/Then/Else & the Range object
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Range("B2").Select
+    
+    'While the activecell isn't blank...
+    Do While ActiveCell.Value <> ""
+        
+        'The logical test...
+        'If the value of the activecell is "Male"...
+        If ActiveCell.Value = "Male" Then
+            
+            '...then write "It's a MAN!" in column G
+            ActiveCell.Offset(0, 5).Value = "It's a MAN!"
+            
+        'If it doesn't...
+        Else
+        
+            '...then write "She's a woman. W.O.M.A.N!" in column G
+            ActiveCell.Offset(0, 5).Value = "She's a woman. W.O.M.A.N!"
+     
+        'End of logical test
+        End If
+    
+    'Move down a cell
+    ActiveCell.Offset(1, 0).Select
+    
+    'End of loop
+    Loop
+
+End Sub
+
+Sub Logical2B()
+
+'*************************************** Programming Project
+'Copy and paste Sub Logical2A() in here, and convert it to test if a person is over a certain age
+'Change the output texts accordingliy
+
+End Sub
+
+
+
+Sub Logical2C()
+'Simple logical test using a If/Then/Else & the cells object
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Range("B2").Select
+    
+    'Get the last row number
+    MyLastRow = Range("B100000").End(xlUp).Row - 1
+    
+    'While ti the last populated cell
+    For X = 1 To MyLastRow
+        
+        'The logical test...
+        'If the value of the cell (X+1, column B) is "Male"...
+        If Cells(X + 1, 2) = "Male" Then
+            '...then write "It's a MAN!" in column G
+            Cells(X + 1, 7).Value = "It's a MAN!"
+        
+        'If it doesn't...
+        Else
+            '...then write "She's a woman. W.O.M.A.N!" in column G
+            Cells(X + 1, 7).Value = "She's a woman. W.O.M.A.N!"
+        
+        'End of logical test
+        End If
+    
+    'End of loop
+    Next
+
+End Sub
+
+
+'Logical tests matching more than one criteria
+
+
+Sub Logical3A()
+'Logical test checking if 2 criteria are true
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Range("B2").Select
+    
+    'While the activecell isn't blank...
+    Do While ActiveCell.Value <> ""
+        
+        'The logical test...
+        'If the value of the activecell is "Male", AND column E = "Brown"...
+        If ActiveCell.Value = "Male" And ActiveCell.Offset(0, 3).Value = "Brown" Then
+            
+            '...then write "It's a brown haired MAN!" in column G
+            ActiveCell.Offset(0, 5).Value = "It's a brown haired MAN!"
+            'Move down a cell
+            ActiveCell.Offset(1, 0).Select
+            
+        'If it doesn't...
+        Else
+        
+            'Move down a cell
+            ActiveCell.Offset(1, 0).Select
+            
+        'End of logical test
+        End If
+    
+    'End of loop
+    Loop
+
+End Sub
+
+Sub Logical3B()
+
+'*************************************** Programming Project
+'Copy and paste Sub Logical3A() in here, and convert it using Cells instead of Range
+'See earlier examples above and notice which elements change...
+
+End Sub
+
+Sub Logical3C()
+'Logical test checking if 1 criterion is true, and 1 is false
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Range("B2").Select
+    
+    'While the activecell isn't blank...
+    Do While ActiveCell.Value <> ""
+        
+        'The logical test...
+        'If the value of the activecell is "Male", AND column E DOES NOT EQUAL "Brown"...
+        If ActiveCell.Value = "Male" And ActiveCell.Offset(0, 3).Value <> "Brown" Then
+            
+            '...then write "It's a brown haired MAN!" in column G
+            ActiveCell.Offset(0, 5).Value = "It's a MAN...but he DOESN't have brown hair!"
+        
+        'End of logical test
+        End If
+    
+    'Move down a cell
+    ActiveCell.Offset(1, 0).Select
+    
+    'End of loop
+    Loop
+
+End Sub
+
+Sub Logical3D()
+
+'*************************************** Programming Project
+'Copy and paste Sub Logical3C() in here, and convert it using Cells instead of Range
+'See earlier examples above and notice which elements change...
+
+End Sub
+
+
+Sub Logical3E()
+'Logical test checking if EITHER criteria is true
+    
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range (column B has Sex)
+    Range("B2").Select
+    
+    'While the activecell isn't blank...
+    Do While ActiveCell.Value <> ""
+        
+        'The logical test...
+        'If the value of the activecell is "Male", OR column E = "Brown"...
+        If ActiveCell.Value = "Male" Or ActiveCell.Offset(0, 3).Value = "Brown" Then
+            
+            '...then write "It's a brown haired MAN!" in column G
+            ActiveCell.Offset(0, 5).Value = "This person is a man OR has brown hair, or BOTH!"
+
+        'End of logical test
+        End If
+        
+        'Move down a cell
+        ActiveCell.Offset(1, 0).Select
+
+    'End of loop
+    Loop
+
+End Sub
+
+Sub Logical3F()
+
+'*************************************** Programming Project
+'Copy and paste Sub LogicalEC() in here, and convert it using Cells instead of Range
+'See earlier examples above and notice which elements change...
+
+End Sub
+
+
+'Logical tests using Select Case
+
+
+Sub Logical4A()
+'Logical test using Selct Case and Range object
+    
+    'Set up a local variable (only used int his sub
+    Dim MyAge As Integer
+
+    'Select the correct sheet (by vbName)
+    ShLogicalTesting.Select
+    
+    'Clear old stuff
+    Range("G:G").ClearContents
+    
+    'Select start of range
+    Range("A2").Select
+    
+    'Get the last row number
+    MyLastRow = Range("B100000").End(xlUp).Row - 1
+    
+    'While ti the last populated cell
+    For X = 1 To MyLastRow
+        
+        'Get the value from column D (offset 3 columns from A)
+        MyAge = ActiveCell.Offset(0, 3).Value
+        
+        'Begin select case statement
+        Select Case MyAge
+        
+            Case Is < 20
+                ActiveCell.Offset(0, 6).Value = "Teenager"
+            Case Is < 30
+                ActiveCell.Offset(0, 6).Value = "Twenty-something"
+            Case Is < 40
+                ActiveCell.Offset(0, 6).Value = "Thirty-something"
+            Case Is < 50
+                ActiveCell.Offset(0, 6).Value = "Life's just beginning"
+            Case Is >= 50
+                ActiveCell.Offset(0, 6).Value = "No comment"
+        
+        'finish the select case testing
+        End Select
+  
+        'Move down a cell
+        ActiveCell.Offset(1, 0).Select
+  
+    'End of loop
+    Next
+
+End Sub
+
+Sub Logical4C()
+
+'*************************************** Programming Project
+'Copy and paste Sub Logical4B() in here, and convert it using Cells instead of Range
+'See earlier examples above and notice which elements change...
+
+End Sub
