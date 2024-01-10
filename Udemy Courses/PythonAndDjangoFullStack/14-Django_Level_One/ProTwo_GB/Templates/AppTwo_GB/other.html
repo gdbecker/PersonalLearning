@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "AppTwo_GB/base.html" %}
+{% load my_extras %}
+  {% block body_block %}
+    <h1>Welcome to Other!</h1>
+    <h2>This is an example of template inheritance!</h2>
+
+    <h2>{{ text|cut_2:'world' }}</h2>
+    <h2>{{ number|add:"99" }}</h2>
+
+    <div class="jumbotron">
+      <h1>Django Level Five!</h1>
+    </div>
+  {% endblock %}

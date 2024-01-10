@@ -1,0 +1,42 @@
+/*
+Color pallette:
+https://coolors.co/ffe0b5-ede580-a4af69-4c2719-d35269
+*/
+
+h1{
+  font-family: 'Train One';
+  font-size: 25px;
+  text-align: center;
+}
+
+table{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+td{
+  align: center;
+  width: 175px;
+  height: 350px;
+  border: 10px white solid;
+}
+
+#one{
+    background-color: #FFE0B5;
+}
+
+#two{
+    background-color: #EDE580;
+}
+
+#three{
+    background-color: #A4AF69;
+}
+
+#four{
+    background-color: #4C2719;
+}
+
+#five{
+    background-color: #D35269;
+}

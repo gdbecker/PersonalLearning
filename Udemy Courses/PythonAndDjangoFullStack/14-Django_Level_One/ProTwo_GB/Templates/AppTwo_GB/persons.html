@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Persons List!</title>
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Please Sign Up Here!</h1>
+    <form method="POST">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" class="btn" name="" value="Submit">
+    </form>
+
+    <h1>Welcome to the Persons List</h1>
+    <h2>Here's what's in the databse:</h2>
+
+    <div class="personslist">
+      {% if persons %}
+
+          <ol>
+
+            {% for p in persons %}
+
+            <li>User Info</li>
+            <ul>
+              <li>{{ p.first_name }}</li>
+              <li>{{ p.last_name }}</li>
+              <li>{{ p.email }}</li>
+            </ul>
+
+            {% endfor %}
+
+          </ol>
+
+      {% endif %}
+
+    </div>
+  </body>
+</html>

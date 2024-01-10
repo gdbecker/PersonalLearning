@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page!</title>
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Heading for index.html!</h1>
+      {{ somethingHere }}
+    </div>
+
+  <h1>Level Two Stuff</h1>
+  <h2>Here are your access records:</h2>
+
+  <div class="djangoTwo">
+    {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Access</th>
+        </thead>
+
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      {% else %}
+        <p>No access records found</p>
+      {% endif %}
+  </div>
+
+  <div class="jumbotron">
+    <h2>Head on over to /persons to view the user list!</h2>
+    <h2>Go to /formpage to fill out the form!</h2>
+  </div>
+
+  </body>
+</html>
