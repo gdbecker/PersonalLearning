@@ -1,4 +1,4 @@
-# Udemy -The Complete Python Bootcamp From Zero to Hero in Python
+# Udemy - The Complete Python Bootcamp From Zero to Hero in Python
 
 Projects and learning from Jose Portilla's [The Complete Python Bootcamp From Zero to Hero in Python course on Udemy](https://www.udemy.com/course/complete-python-bootcamp/).
 
