@@ -2,9 +2,7 @@
 
 [Hacker X Ethical Hacking course on Apple App Store](https://apps.apple.com/us/app/hackerx-learn-ethical-hacking/id1542444199)
 
-### [Certificate]()
-
-!["Certificate"](./Certificate.jpg)
+!["Certificate"](./HackerXCertificate.jpg)
 
 Ethical Hacking and Cybersecurity courses created by renowned hackers around the globe. Master hacking in an all-new and beginner-friendly way. And get certified!
 
