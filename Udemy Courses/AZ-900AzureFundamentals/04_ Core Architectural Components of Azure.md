@@ -1,0 +1,119 @@
+## 04_ Core Architectural Components of Azure
+
+### Regions, region pairs, sovereign regions
+- Regions
+  - Areas of the world where Azure has a set of data centers (minimum of 3 in a set)
+  - Not necessarily "countries" but can be
+  - Usually each region is connected to another region to make a "region pair"
+  - Region pairs have highest speed connections and special treatment during Azure updates
+- Canada
+  - Has two regions: Canada Central and Canada East
+  - Data stored in these regions never leaves Canada
+  - Anyone can use these regions
+- Brazil
+  - Only has one region: Brazil South
+  - Currently is the only region in South America, but Chile is coming online soon
+  - Paired with South Central US (one way)
+  - Data does leave Brazil (to the US)
+- Qatar
+  - First region that does not have a pair
+  - Does not support Geo-Redundant Storage (GRS) option
+  - Uses Availability Zones for high availability
+- When you create a resource in Azure, you have the choice of where to deploy it
+- 60+ regions but most of them are not available to everyone
+- Sovereign regions
+  - These are not connected to the Azure Public Cloud
+  - Require approval to join / create a subscription
+  - Adhere to different compliance standards
+  - Example: US Department of Defense
+    - Won't tell you what services they use on Azure's website
+  - Example: China
+    - Limited to those who reside in China
+
+### Availability Zones and Data Centers
+- Availability Zones = are physically separate locations within each Azure region
+  - Independent power, cooling, and networking infrastructure
+  - Not every region supports Availability Zones
+  - Not every service supports Availability Zones
+- Regions with Availability Zones
+  - The Americas
+    - Brazil South
+    - Canada Central
+    - Central US - East US - East US 2
+    - South Central US - West US 2 - West US 3
+    - US Gov Virginia
+  - Europe
+    - France Central
+    - Germany West Central
+    - North Europe - West Europe
+    - Norway East
+    - UK South
+    - Sweden Central
+    - Switzerland North
+  - Middle East
+    - Qatar Central
+    - UAE North
+  - Africa
+    - South Africa North
+  - Asia Pacific
+    - Australia East
+    - Central India
+    - Japan East
+    - Korea Central
+    - Southeast Asia - East Asia
+    - China North 3
+- Three types of AZ Services
+  - Zonal Services
+    - You can choose a specific Availability Zone to deploy the service to
+    - You then should deploy a duplicate service to another zone to achieve resiliency
+    - Like for VMs
+  - Zone-Redundant Services
+    - Automatically deployed across zones for you
+    - You don't have to configure it
+    - Azure SQL Database
+  - Always Available Services
+    - These are global services and Microsoft takes care of ensuring that they are always on
+    - Also called "Non-regional services"
+    - Like Azure Portal, Azure Active Directory, Azure Front Door (where you create profiles for your service)
+- Some services give you the choice between zonal and zone-redundant 
+
+### Resources and Resource Groups
+- Resources
+  - A generic word to represent an Azure service that you have access to, such as a specific VM, Storage Account, or Database
+  - You can create resources in many ways - Azure Portal, CLI, PowerShell, ARM Template, etc
+  - Each resource has a name created by you
+  - Sometimes it has to be unique, sometimes not
+  - Generally you indicate the region where they are to be created
+- All Resources
+  - A brand new subscription is created with no resources
+  - Most resources have costs associated with them
+  - The resource is associated with one (and only one) subscription, to which its cost is billed
+- Resource Group
+  - A logical grouping of resources
+  - Resource Group associated with a region, which can be different than the resources it contains
+  - All services in a resource group should have a similar lifecycle - deploy together, delete together
+- Resource and Group
+  - All resources must belong to one and only one resource group
+  - Permissions can be assigned at the resource group level
+  - There is no security boundary offered by a resource group for communications
+
+### Subscriptions
+- A billing unit within Azure
+- Always a payment method associated with a subscription
+- Users can have access to more than one subscription, and different roles
+- Subscription Plans
+  - Free plan: $200 credits for first 30 days
+    - Can only have one
+  - Pay as you Go - billed to credit card
+  - Enterprise Agreement - EA
+  - Free credits - MSDN, Startup plans
+- Multiple Subscriptions
+  - Some companies can choose to have multiple subscriptions
+  - Can be used to separate out business units within an organization (like Sales, IT, Finance)
+  - Or operate by geography 
+- It's possible to operate an entire organization on a single subscription
+
+### Management Groups
+- Subscriptions fall under Management Groups
+- A single Management Group can handle multiple subscriptions
+- Can enforce security policies to a group of subscriptions

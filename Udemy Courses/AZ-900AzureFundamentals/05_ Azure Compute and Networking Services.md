@@ -1,0 +1,156 @@
+## 05_ Azure Compute and Networking Services
+
+### Azure Compute services and Azure Virtual Machines
+- Computing services
+  - Technical Pillars of Azure
+    - Compute services
+    - Networking services
+    - Storage services
+    - Database services
+  - Goal: "Executing code" in the cloud
+  - Compute types in Azure
+    - Virtual Machines (VM)
+    - VM Scale Sets(VMSS)
+    - App services (Web apps)
+    - Azure Container Instances (ACI)
+    - Azure Container Apps
+    - Azure Kubernetes Service (AKS)
+    - Azure Virtual Desktop
+- Virtual Machines
+  - This is the closest analogue to a "server" in cloud computing
+  - But it's virtual
+  - That is, a single physical machine has been subdivided into slices and you get to rent a single slice of it
+  - Standalone Server Analogy
+    - Think of a standalone self-hosted server as a single-detached house
+    - You can do whatever you want with it (generally)
+    - It's very difficult to do anything that affects your neighbors (soundproof walls)
+    - You don't share any services with your neighbors besides garbage, sewer, water, electricity - provided by the city
+  - Virtualization Analogy
+    - Think of a host as an apartment building on the same land
+    - And a VM as an apartment in that building
+    - You're using common services like garbage, sewer, water, electricity - provided by the landlord (Azure)
+    - Other services available like shared gym, heating/cooling, landscaping and snow removal
+    - It's generally cheaper to rent an apartment than a house
+    - When you're inside the apartment, it's hard to tell that it's not a house
+  - VMs
+    - Infrastructure as a Service - IaaS
+    - Take an existing machine from your environment into the cloud - a copy
+    - Windows or Linux operating systems - several of each
+    - A "slice" of a physical machine shared with other customers
+    - Full control over it, as if it was your machine
+    - In AWS, a VM is called an Elastic Compute Cloud (EC2)
+  - Virtual Machine Types
+    - Over 700 to choose from
+    - Number of CPU cores, CPU speed, RAM size, temporary disk size, IOPS, etc
+
+### Scaling Virtual Machines using VM Scale Sets (VMSS)
+- Scaling Azure VMs
+  - You can increase the size of a VM easily, turning a 3 vCPU VM into an 8 vCPU VM in minutes (scale up)
+    - Can go to 64 vCPUs or higher
+  - OR you can add more VMs and have them work together to handle the work (scale out)
+- VM Scale Sets
+  - A group of VMs that can grow and shrink in quantity based on a predefined rule
+    - Usually based on monitoring demand
+    - Can be based on time (schedule)
+    - Can be based on many other factors
+  - Satisfies the Elasticity benefit of cloud computing
+  - Two or more VMs running the exact same code
+  - With a "load balancer" in front to direct traffic randomly to one of the machines
+  - Able to add more machines as demand grows (auto-scaling)
+  - Able to reduce machines as demand slows
+  - Can handle up to 100VMs in a single scale set
+  - Can be configured to increase that to 1000 VMs in a single scale set
+  - If you need more, you can create more scale sets
+
+### App Services, Containers, and Azure Virtual Desktop
+- App Services (Web Apps)
+  - A new paradigm for running code in the cloud
+  - Give your code and configuration to Azure, and they will run it
+  - Promise of performance but no access to hardware
+  - Platform as a Service (PaaS)
+- Container Services
+  - Another paradigm for running code in the cloud
+  - Containers contain everything the app needs to run in a "container image"
+  - Fastest and easiest to deploy
+  - Azure Container Instance (ACI) - single instance, quickest way to deploy a container
+  - Azure Container Apps - easy to use like a web service, with advanced features
+  - Azure Kubernetes Service (AKS) - runs on a cluster of servers, enterprise-grade
+- Azure Virtual Desktop
+  - Desktop version of Windows that runs in the cloud
+  - Your software installed, your files - available from anywhere
+  - Can even see your desktop on iOS and Android, or from any web browser
+  - Runs on Azure
+
+### Azure Functions
+- Small pieces of code that run entirely in the cloud
+- Utility function - does something specific in a finite amount of time
+- Is triggered by something happening
+  - HTTP call, timer, blob creation, message queue, etc
+- Very inexpensive
+- Free tier - one million executions per month free
+  - Serverless model
+- Can support more complicated designs
+  - Durable functions
+  - Long-running functions
+  - Premium or dedicated hosting options
+- Examples of Azure Functions
+  - A small piece of code that runs every day at 12AM, and summarizes yesterday's data
+  - A small piece of code that checks a blob container for new files, and does something every time it finds a new one
+  - A small piece of code tha runs every 6 hours, and retrieves the latest weather forecast from a publicly accessible weather API
+
+### Azure Networking services
+- Virtual Networking in Azure
+  - Sometimes called VNets
+  - Microsoft has an extensive global network of cables, switches, routers - the physical network
+  - We saw "the globe" of Microsoft's network at the beginning of the course
+- Virtual Networks
+  - By default, two VMs in Azure are not allowed to talk to each other - security!
+  - Virtual Networks have an analogue to the physical networks we would set up in our own office or data center - IaaS
+  - In Azure, it's virtual because it's effectively just a database entry in a table that establishes the path between VM A and VM B
+- VNets
+  - Are assigned an address space of either IPv4 IPv6 addresses, or both
+  - These are private addresses, which cannot be accessed from outside of Azure or other networks outside of Azure
+  - A single VNet is usually assigned a large quantity address space to support potential future growth
+  - There is no storage of private IP addresses
+- Subnets
+  - All VNets are subdivided into one or more subnets
+  - The subnet is assigned a range of IP addresses which must exist in the address space of the parent VNet
+  - Usually there is a security layer between subnets; traffic must match a predefined rule set to pass
+- VMs
+  - All VMs must belong to at least one subnet, using a Network Interface Card (NIC)
+  - Some VMs have more than one NIC and can connect to more than one subnet
+  - VMs can optionally be assigned a public IP, which makes it eligible to be accessed from outside Azure (subnet to security/firewalls)
+- Network Security Group
+  - Also called an NSG
+  - An access control list (ACL) that blocks traffic inbound and outbound from a subnet unless it matches certain rules
+  - The rules are based on source IP, source port, destination IP, destination port, and protocol (5-tuple match)
+- NSGs
+  - You can allow communication between different subnets on the same network through adding specific NSG rules
+  - No traffic passes the NSG filter unless an "ALLOW" rule matches
+  - Rules have priorities, and the highest priority rule that matches is the one that applies
+
+### Networking Peering, Azure DNS, and VPN Gateway
+- Peering
+  - Communication is blocked between two subnets on different networks
+  - Connecting two subnets together is called peering
+  - This allows communication between a VM on one network and a VM on a different network
+- Azure DNS
+  - DNS = Domain Name System
+  - You can give your IP addresses names using a DNS
+  - DNS only applies internally to Azure to applied networks
+- Azure VPN Gateway
+  - VPN = Virtual Private Network
+  - Allows communication between a workstation and a network, or between two networks
+  - Encrypts traffic between those two points
+- VPNs
+  - Outside of Azure, VPNs require a physical device to be installed on a network
+  - Inside of Azure, you can install a VPN Gateway as a virtual device on your network
+  - VPN Gateway requires its own subnet
+- Work from home
+  - If you work from home, you probably use a VPN to connect to the office network
+  - This is called "point to site" VPN or S2S
+  - Can connect an entire office of computers to an Azure subnet, or two offices together
+- ExpressRoute
+  - If communicating into Azure at high speeds is important to you, you might want to look into ExpressRoute
+  - A private connection from your ISP to an Azure endpoint
+  - Bypasses the public internet
