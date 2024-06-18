@@ -2,7 +2,7 @@
 
 Projects and learning from Scott Duffy's [AZ-900: Microsoft Azure Fundamentals Exam Prep course on Udemy](https://www.udemy.com/course/az900-azure/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-7176c702-1bb5-4c69-9c14-c95793a730da/)
 
 !["Certificate"](./Certificate.jpg)
 

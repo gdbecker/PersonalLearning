@@ -1,13 +1,144 @@
 ## 01_ What is Cloud Computing?
 
 ### What is it?
--
+- What is a server composed of?
+  - Compute: CPU
+  - Memory: RAM - store and retrive info fast
+  - CPU + RAM = "brain"
+  - Storage: Data
+  - Database: store data in a structured way
+  - Network: routers, switch, DNS server
+- IT terms
+  - Network: cables, routers and servers connected with each other
+  - Router: a networking device that forwards data packets between computer networks. They know where to send your packets on the internet!
+  - Switch: takes a packet and send it to the correct server/client on your network
+- Problems with a traditional IT approach
+  - Pay for rent for the data center?
+  - Pay for power supply, cooling, and maintenance
+  - Adding and replacing hardware takes time
+  - Scaling is limited
+  - Hire 24/7 team to monitor the infrastructure
+  - How to deal with natural disasters?
+  - Can we externalize all this? Yes!
+- What is cloud computing?
+  - On-demand delivery of compute power, database storage, apps, and other IT resources
+  - Through a cloud services platform with pay-as-you-go pricing
+  - You can provision exactly the right type and size of computing resources you need
+  - You can access as many resources as you need, almost instantly
+  - Simple way to access servers, storage, databases, and a set of application services
+  - AWS owns and maintains the network-connected hardware required for these application services, while you provision and use what you need via a web app
+- Deployment models of the cloud
+  - Private cloud
+    - Cloud services used by a single organization, not exposed to the public
+    - Complete control
+    - Security for sensitive apps
+    - Meet specific business needs
+  - Public cloud
+    - Resources owned and operated by a third-party cloud service provider delivered over the internet
+    - 6 advantages of Cloud Computing
+  - Hybrid cloud
+    - Keep some servers on premises and extend some capabilities to the cloud
+    - Control over sensitive assets in your private infrastructure
+    - Flexibility and cost-effectiveness of the public cloud
+- 5  characteristics of cloud computing
+  - On-demand self service
+    - Users can provision resources and use them without human interaction from the service provider
+  - Broad network access
+    - Resources available over the network and can be accessed by diverse client platforms
+  - Multi-tenancy and resource pooling
+    - Multiple customers can share the same infrastructure and apps with security and privacy
+    - Multiple customers are serviced from the same physical resources
+  - Rapid elasticity and scalability
+    - Automatically and quickly acquire and dispose resources when needed
+    - Quickly and easily scale based on demand
+  - Measured service
+    - Usage is measured, users pay correctly for what they've used
+- 6 advantages of cloud computing
+  - Trade capital expenses (CAPEX) for operational expense (OPEX)
+    - Pay on-demand: don't own hardware
+    - Reduced total cost of ownership (TCO) and operational expense (OPEX)
+  - Benefit from massive economies of scale
+    - Prices are reduced as AWS is more efficient due to large scale
+  - Stop guessing capacity
+    - Scale based on actual measured usage
+  - Increase speed and agility
+  - Stop spending money running and maintaining data centers
+  - Go global in minutes: leverage the AWS global infrastructure
+- Problems solved by the cloud
+  - Flexibility: change resource types when needed
+  - Cost-effectiveness: pay as you go, for what you use
+  - Scalability: accommodate larger loads by making hardware stronger or adding additional nodes
+  - Elasticity: ability to scale-out and scale-in when needed
+  - High-availability and fault-tolerance: build across data centers
+  - Agility: rapidly develop, test and launch software apps
 
 ### Different types of cloud computing
--
+- Infrastructure as a Service (IaaS)
+  - Provide building blocks for cloud IT
+  - Provides networking, computers, data storage space
+  - Highest level of flexibility
+  - Easy parallel with traditional on-premises IT
+  - Examples: EC2
+- Platform as a Service (PaaS)
+  - Removes the need for your organization to manage the underlying infrastructure
+  - Examples: Elastic Beanstalk
+  - Focus on the deployment and management of your apps
+- Software as a Service (SaaS)
+  - Completed product that's run and managed by the service provider
+  - Examples: Rekognition
+- Pricing of the cloud
+  - AWS has 3 pricing fundamentals: following the pay-as-you-go pricing model
+  - Compute: pay for compute time
+  - Storage: pay for the data stored on the cloud
+  - Data transfer OUT of the cloud; data transfer IN is free
+  - Solves the expensive issue of traditional IT
 
 ### AWS cloud overview
--
+- History
+  - Launched internally in 2002
+  - First offering in 2003: SQS
+  - 2007: launched in Europe
+- AWS is the cloud leader
+- Use cases
+  - Build sophisticated and scalable apps
+  - Applicable to many industries
+  - Use cases can include
+    - Enterprise IT, backup and storage, Big Data analytics
+    - Website hosting, mobile and social apps
+    - Gaming
+- Global infrastructure 
+  - AWS Regions
+    - Has regions all around the world, and each has a different name
+    - It's a cluster of data centers
+    - Most AWS services are region-scoped
+    - How do you choose a region?
+      - Compliance with data governance and legal requirements: data never leaves a region without your explicit permissions
+      - Proximity to customers: reduced latency
+      - Available services with a region: new services and new features aren't available in every region
+      - Pricing: varies from region to region, and is transparent in the service pricing page
+  - AWS Availability Zones
+    - Each region has many, minimum is 3, max is 6
+    - Usually each region has 3
+    - Each AZ is one or more discrete data centers with redundant power, networking, and connectivity 
+    - They're separate from each other; so that they're isolated from disasters
+    - They're connected with high bandwidth, ultra-low latency networking
+  - AWS Data Centers
+  - AWS Edge Locations / Points of Presences
+    - Amazon has 400+ Points of Presence in 90+ cities across 40+ countries
+    - Content is delivered to end users with low latency
+- AWS Console
+  - AWS has Global Services
+    - Identity and Access Management (IAM)
+    - Route 53 (DNS service)
+    - CloudFront (Content Delivery Network)
+    - WAF (Web Application Firewall)
+  - Most AWS services are region-scoped
+    - EC2 (IaaS)
+    - Elastic Beanstalk (PaaS)
+    - Lambda (Function as a Service)
+    - Rekognition (SaaS)
 
-### Shared responsibility model and AWS Acceptable Policy
--
+### Shared Responsibility Model and AWS Acceptable Policy
+- Customer = responsible for the security IN the cloud
+- AWS = responsible for the security OF the cloud
+- Acceptable Policy: don't do bad things like network abuse, security violations, etc
