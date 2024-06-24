@@ -2,7 +2,7 @@
 
 Projects and learning from Stephane Maarek's [Ultimate AWS Certified Cloud Practitioner CLF-C02 course on Udemy](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-d8488228-3581-4fd6-b176-206341495a4e/)
 
 !["Certificate"](./Certificate.jpg)
 
