@@ -1,0 +1,250 @@
+## 07_ Dimensional Modelling
+
+### What is dimensional modelling?
+- Pioneered by Ralph Kimball
+- Suited for Data Warehouse and BI apps
+- De-normalized structure, optimized for faster data retrieval
+- Easier to understand and to use by business users
+- Groups the data according to business categories
+- Dimensional models stored are often referred to as star schemas
+- Both the dimensional models and the 3NF models are logical models of data that can be physically stored in relational databases
+- Part of the data warehouse lifecycle
+
+### Kimball Data Warehouse Lifecycle
+- Program/Project Planning
+  - Program
+    - Long-term strategic approach, no fixed deadline
+    - Contains multiple projects, can be linked
+    - Governed by senior stakeholders
+  - Project
+    - Aim is to deliver one or more business products
+    - Is time-bound, has an end date
+    - Contains project team
+  - Define Project
+    - Why is this data warehouse project required?
+    - Access readiness
+      - Sponsor support, investment, culture, resources and business motivation
+    - Benefits/ROI new data warehouse project will bring in
+  - Project Planning
+    - Develop project plan (cost, resourcing, start date, completion date)
+    - Project team assemble
+  - Project team members
+    - Data Architect (design and architect)
+    - Data Engineer (ingestion, data pipelines, ETL/ELT)
+    - Analytics Engineer (data modelling, transformation)
+    - BI Analyst (business logic)
+    - Project Manager (project governance, stakeholder management)
+- Requirements Gathering
+  - Interviews with business users and executives
+    - Understand the needs of the business
+    - Develop interview questions
+    - Series of interviews with business stakeholders
+    - Understand KPIs, process, issues all the information to support their analytical needs
+  - Data source analysis or data profiling
+    - High-level data profiling of the various sources
+    - Meeting with source system experts
+    - Understanding where everything is coming from and where it's going
+    - Ensure data readiness
+    - Use Data Flow Diagram to understand source system data flow
+  - Things to look out for in data profiling
+    - Missing data or data sources (impact on timeline)
+    - Check data relationships
+    - Do distinct count
+    - Data quality (data clean up)
+    - Data volume (scalability)
+    - Batch/stream data (extra ETL/ELT jobs)
+    - Check for data redundancies (extra ETL/ELT jobs)
+  - Documentation write-up
+    - Findings from interviews
+    - Success criteria
+    - Data sources list
+    - Business processes identified
+    - User stories
+      - Facilitate work and make it easier to understand
+    - Business processes laid out in Enterprise Bus Matrix
+      - Essential tool to implement the Dimensional Data Warehouse
+      - Defines high-level entities
+      - Rows are business processes
+      - Columns are dimensions
+      - Allows to scan through and test a dimension is well defined for a business process
+      - Helps prioritize the project direction and workload
+  - Business processes
+    - Operational activities performed by your organization
+    - Generate or capture performance metrics that translate into facts in a fact table
+    - Fact tables focus on the results of a single business process
+    - Defines a specific design target
+    - Allows to define the grain, dimensions, and facts
+    - Corresponds to a row in the bus matrix
+- Dimensional Modelling (star schema)
+  - Dim (Dimension)
+    - Dimension = descriptive information about facts
+    - Example: customer, data, products
+    - Attributes define characteristics of a dim (customer_name, product_description)
+  - Fact
+    - Fact = business measurement or business activity (transaction, sales)
+    - Example of a business activity: "Product was sold for $50"
+    - Measurement in fact defines quantitative values (sum, count, avg, etc)
+    - Example measure: Price = $50
+  - Steps for dimensional modelling
+    - Select the business process
+      - Operational activities performed by your organization
+      - Capture performance metrics that will get translated into fact tables
+    - Declare the grain
+      - A critical process that establishes what a single row of fact table represents
+      - Must be declared before anything else as it dictates the design of the dim and fact tables
+      - Declare the grain = defining the level of detail for your star schema
+      - Indicates the lowest level at which data is captured (daily, hourly, monthly, etc)
+      - Both Dim and Fact tables contain some level of details
+      - In a fact table, individual transactions and line item of order contains level of details
+      - Data should be stored as granular as possible
+      - Granularity should be defined before identifying the Dim and Fact
+    - Identify the dimensions
+      - Who, what, when, where, why, how context of a business process
+      - Whenever possible, a dim should be a single value when associated with a given fact
+      - Dimension tables contain descriptive fields
+      - Usually flat, de-normalized table
+      - Have a single primary key column
+      - Attributes are the primary target for declaring constraints
+      - Dimension characteristics should be verbose (full words), descriptive, and complete (no missing values)
+      - Usually represent many-to-one cardinal relationships
+      - Conformed Dimensions
+        - Common dimensions that are joined to multiple fact tables
+        - Provide same structure, attributes, and same meaning in every fact table
+        - Improved data consistency
+        - Every row is unique and is at atomic level
+        - Enables cross process analysis by allowing various facts in the same query
+        - Easy to update as all business rules are in one place
+        - Contains primary and surrogate keys
+        - Date dimension is common conformed dimension (year, month, week, days, etc)
+        - Conformed dimensions are needed to build Dimensional Data Warehouse
+      - Junk Dimensions
+        - Dim with simple attributes (flags, yes/no, true/false, id/description)
+        - Values that do not change frequently
+        - Eliminate small dimensions for performance and better management
+        - Group highly correlated attributes into a single dimension
+        - Reduce the number of dimensions (<= 26 dimensions per fact tables)
+        - Reduce the number of columns in the fact table
+        - Reduce joins between facts and dimensions
+      - Degenerate Dimensions
+        - Dimensions without attributes
+        - Receipt/invoice numbers, tracking numbers, order numbers, etc
+        - It's stored inside a fact table to reduce duplications (fact dimensions)
+        - Degenerate dimensions are added due to the grain of the fact tables
+      - Role-Playing Dimensions
+        - Same dimension used for multiple purposes
+        - Used multiple times within the same fact table, but giving different business contexts
+        - Best example is date dimension
+        - Example: fact_order table contains (order_date, due_date, cancelled_date)
+          - Don't create multiple dim tables for each date column - instead, create one dim_date table that connects to each of these data columns
+      - Slowly Changing Dimensions (SCD)
+        - Dimensions that change over time
+        - Manages current and historical version
+        - Built to track changes
+        - Different types:
+          - Type 0: Retain original
+            - There is essentially no changes
+            - The attribute will never change
+            - Facts always grouped by the original value
+            - Not used in most business cases
+          - Type 1: Overwriting the old value
+            - Overwrite the old values
+            - Attributes always reflect the most recent assignment, disregarding historical changes
+            - But you lose track of historical assignments
+          - Type 2: New additional record
+            - Create new additional record
+            - New primary key (SK), flag column (current_flag) and date columns added to track
+            - Used most of the time to track historical changes
+          - Type 3: Adding a new attribute column
+            - Add a new column to the dimension to preserve historical information
+            - Allows to query in 2 different realities
+          - Type 4: Using historical table
+            - Historical table used to track any changes separate to the dimension table
+            - The main dimension only keeps current data based on the present time period
+        - SCD: Store as Snapshots
+          - Use table partitions and store as snapshot for dimensions
+          - All data is added to snapshot daily or weekly
+    - Bridge Tables
+      - Used to resolve many-to-many relationships
+      - Sits between Fact and Dimension tables
+      - Only containing key columns for the various tables
+      - Access requirements before implementing
+      - Loading of table can be complex
+    - Identify the facts
+      - Measurements in numeric values that result from a business process
+      - Only facts consistent with the declared grain are allowed
+      - Contains the measurement created by operational systems
+      - At the lowest granularity captured by the business process
+      - Design entirely based on a physical activity, not influenced by the report
+      - Contain foreign keys for each dimension associated
+      - Measures are used for queries and aggregations
+      - Primary key is usually a composite key
+      - Additive Facts (type of fact measure)
+        - Measures that can be summed across any of the dimensions within the fact table
+      - Semi-Additive Facts (type of fact measure)
+        - Measures that can be summed across some of the dimensions within the fact table
+      - Non-Additive Facts (type of fact measure)
+        - Measures that cannot be summed across any of the dimensions within the fact table
+      - Transaction Fact Table (type of fact table)
+        - Most common in dimensional modelling
+        - Grain is one row per transaction
+        - Lowest level of granularity
+        - Additive measures
+        - Can grow large very fact
+        - No update happens in these tables, usually only inserts
+      - Periodic Fact Table (type of fact table)
+        - Snapshot of data for a specific time period (day, week, month, hour, etc)
+        - Grain is one row per time period
+        - Semi-additive facts
+        - Usually built from Transaction Fact table
+        - Smaller table size compared to Transaction Fact table
+        - Useful to get overview of KPIs
+      - Accumulative Fact Table (type of fact table)
+        - One row per entire lifetime of an event or product
+        - Has beginning and an end date
+        - Contains multiple date columns
+        - Update happens when each milestone is completed
+        - Example: processing of an order, insurance processing, material processing
+        - Aggregation can be difficult to perform
+        - Smallest in table size
+  - Dimensional modelling steps summary
+    - Business processes are converted into dimensional model
+    - Facts and dimensions are identified from business process
+    - This dimensional model becomes a star schema or snowflake schema in your data warehouse
+
+### Star Schema
+- Most common schema
+- Simple structure to organize data within your warehouse
+- Fact table at the center of the star connects to the dimension tables
+- Enabling easier querying and understanding
+- Pros
+  - Simpler queries compared to a normalized model
+  - Simplified business reporting logic
+  - Better performing queries
+- Cons
+  - Data integrity not enforced
+  - Does not inform many-to-many relationships
+  - Dependent on business process
+
+### Snowflake Schema
+- Normalize the data from a star schema
+- Helps solve the downsides of writing commands to a star schema
+- Extends onto star schema dim tables until they are normalized
+- Gets rid of low cardinality
+- Pros
+  - Improved data quality as data is more structured
+  - Uses less storage space than a de-normalized schema
+  - Suitable for data with deep hierarchies
+  - Easier to design and develop
+- Cons
+  - Requires more complex queries
+  - Increase number of joins, which potentially impacts the performance
+  - Level of integrity still lower than a highly normalized schema
+  - Difficult for business users to understand the data
+
+| Attribute | Star Schema | Snowflake Schema |
+|--|--|--|
+| Data Structure | De-normalized | Normalized on top of de-normalized |
+| Storage Required | More | Less |
+| Performance | Faster | Slower |
+| Data Redundancy | Yes | No |
+| Organizational | Better for data marts | Better for warehouse |

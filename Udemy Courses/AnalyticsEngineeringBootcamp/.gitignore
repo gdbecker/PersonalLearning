@@ -1,0 +1,17 @@
+*.env
+*.env.example
+*.env.local
+*.env.staging
+env/
+
+*.dbt-env
+*.dbt-env.example
+*.dbt-env.local
+*.dbt-env.staging
+dbt-env/
+
+*.venv
+*.venv.example
+*.venv.local
+*.venv.staging
+venv/
