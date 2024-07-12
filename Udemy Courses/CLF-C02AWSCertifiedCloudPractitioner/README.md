@@ -6,6 +6,10 @@ Projects and learning from Stephane Maarek's [Ultimate AWS Certified Cloud Pract
 
 !["Certificate"](./Certificate.jpg)
 
+### [AWS Credential](https://www.credly.com/badges/12dd9f0b-416f-40ad-83ed-32aa610b115c)
+
+!["Certificate"](./AWS%20Certified%20Cloud%20Practitioner%20certificate.jpg)
+
 ### Course Details
 
 #### What you'll learn

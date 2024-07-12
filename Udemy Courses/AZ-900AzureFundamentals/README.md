@@ -6,6 +6,10 @@ Projects and learning from Scott Duffy's [AZ-900: Microsoft Azure Fundamentals E
 
 !["Certificate"](./Certificate.jpg)
 
+### [Azure Credential](https://learn.microsoft.com/api/credentials/share/en-us/BeckerGarrett-9863/345A78C18580CD56?sharingId=7E8B1D00C3817BDF)
+
+!["Certificate"](./AZ-900%20Certification.png)
+
 ### Course Details
 
 #### What you'll learn

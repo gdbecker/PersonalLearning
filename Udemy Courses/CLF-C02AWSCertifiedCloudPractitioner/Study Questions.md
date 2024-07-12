@@ -56,8 +56,8 @@
 11. A company plans to deploy containers on AWS. The company wants full control of the compute resources that host the containers. Which AWS service will meet these requirements?
     1. Amazon Elastic Kubernetes Service (Amazon EKS)
     2. AWS Fargate
-    3. **Amazon EC2**
-    4. Amazon Elastic Container Service (Amazon ECS)
+    3. Amazon EC2
+    4. **Amazon Elastic Container Service (Amazon ECS)**
 12. Which AWS service or feature allows users to create new AWS accounts, group multiple accounts to organize workflows, and apply policies to groups of accounts?
     1. AWS Identity and Access Management (IAM)
     2. AWS Trusted Advisor
