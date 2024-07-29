@@ -2,7 +2,7 @@
 
 ## Overview
 
-Final coaching capstone project at Elliott Davis - showcasing personal declaration statements and my top 5 Clifton Strengths
+Final coaching capstone project at Elliott Davis: showcasing personal declaration statements and my top 5 Clifton Strengths
 
 ### Mobile View
 
