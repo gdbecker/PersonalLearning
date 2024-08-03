@@ -2,7 +2,7 @@
 
 Projects and learning from Rahul Prasad's [Analytics Engineering Bootcamp course on Udemy](https://www.udemy.com/course/analytics-engineering-bootcamp/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-fe293ec6-c2c2-468d-b599-b7a56a3b1a62/)
 
 !["Certificate"](./Certificate.jpg)
 

@@ -1,8 +1,31 @@
 ## 08_ Building a Dimensional Data Warehouse
 
+### General steps
+- Make sure you're on the latest version of Python installed locally, not on Anaconda
+- Create a venv in the overall project folder on the same level as the dbt project folder
+- Activate venv
+- Install dbt and any specific data warehouse packages for the project
+- Set up the connection between the dbt project and data warehouse you're using (like for BigQuery, make sure your Google credentials are automatically selected to use their APIs and access your warehouse)
+
 ### Commands
-- Activate Python virtual env on Windows: "venv\Scripts\activate"
+- Activate Python virtual env on Windows: "venv\Scripts\activate" (when you are in the same directory as the venv folder)
+- Activate virtual env when you are accessing the venv from below: "..\venv\Scripts\activate"
 - Deactivate Python virtual env on Windows: "deactivate"
+- Run all dbt models: "dbt run"
+- Run all dbt models and replace what was run before with new configurations in dbt_project.yml: "dbt run --full-refresh"
+- Run specific dbt model path: "dbt run -m warehouse.dim_customer"
+- To run tests: "dbt test"
+
+### VS Code extensions
+- vscode-dbt
+- dbt formatter
+- dbt shortcuts
+- dbt-bigquery-preview
+- Power User for dbt
+- SQLTools
+
+### dbt Power User
+- https://docs.myaltimate.com/
 
 ### Other free SQL databases to use for future projects
 - https://www.blueboxes.co.uk/6-sample-sql-databases-for-your-next-azure-project
