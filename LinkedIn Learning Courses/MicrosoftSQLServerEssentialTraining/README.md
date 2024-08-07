@@ -2,7 +2,7 @@
 
 Projects and learning from Adam Wilbert's [Microsoft SQL Server 2022 Essential Training course on LinkedIn Learning](https://www.linkedin.com/learning/microsoft-sql-server-2022-essential-training).
 
-### [Certificate]()
+### [Certificate](https://www.linkedin.com/learning/certificates/b8d7d5bbe061e6f5d842110127dd66066bea89abbd16fa694cef84b5aa9198d9?u=75626930)
 
 !["Certificate"](./Certificate.jpg)
 

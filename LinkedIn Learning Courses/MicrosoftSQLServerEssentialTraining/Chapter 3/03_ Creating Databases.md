@@ -4,6 +4,9 @@
 - Start SQL Server in the command line: "sqlcmd"
 - Check SQL Server command line version: "sqlcmd --version"
 - Run the local database server on your machine: "SQLLocalDB.exe start MSSQLLocalDB"
+- Stop the local database server on your machine: "SQLLocalDB.exe stop"
+- Delete the local database server on your machine: "SQLLocalDB.exe delete"
+- Create a new local database server on your machine: "SQLLocalDB.exe create"
 
 ### Database options setup
 - Collation: controlling sorting options

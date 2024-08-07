@@ -2,7 +2,7 @@
 
 Projects and learning from Adam Wilbert's [Program Databases with Transact-SQL course on LinkedIn Learning](https://www.linkedin.com/learning/program-databases-with-transact-sql).
 
-### [Certificate]()
+### [Certificate](https://www.linkedin.com/learning/certificates/df86d2ea70381f1801f57f350d0ff7e2fde44520f1cb118a2d3e4bde3134664b?trk=share_certificate)
 
 !["Certificate"](./Certificate.jpg)
 
