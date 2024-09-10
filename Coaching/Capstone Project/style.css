@@ -200,6 +200,10 @@ footer a:hover {
 		width: 100%;
 	}
 
+	.heading {
+		text-align: center;
+	}
+
 	.content {
 		flex-direction: column;
 		justify-content: center;
@@ -223,6 +227,10 @@ footer a:hover {
 		border-left: none;
 		border-top: 1px solid var(--yellow);
 		padding: 2.5rem 0;
+	}
+
+	.strength p {
+		text-align: center;
 	}
 }
 

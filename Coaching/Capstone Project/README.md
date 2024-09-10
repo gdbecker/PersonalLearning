@@ -4,17 +4,17 @@
 
 Final coaching capstone project at Elliott Davis: showcasing personal declaration statements and my top 5 Clifton Strengths
 
-### Mobile View
+### Links
 
-![](./)
+- [Live Site URL](https://coaching-capstone-gdbecker.replit.app/)
 
 ### Desktop View
 
-![](./)
+![](./coaching-capstone-gdbecker-desktop.png)
 
-### Links
+### Mobile View
 
-- [Live Site URL]()
+![](./coaching-capstone-gdbecker-mobile.png)
 
 ## My process
 
@@ -33,4 +33,4 @@ Final coaching capstone project at Elliott Davis: showcasing personal declaratio
 
 ## Acknowledgments
 
-Thank you to the Frontend Mentor team for providing all of these fantastic projects to build, and for our getting to help each other grow!
+Thank you to my coach, John Tiernan, for all his leadership, support, and challenges to help me grow and thrive to better serve and care for others!
