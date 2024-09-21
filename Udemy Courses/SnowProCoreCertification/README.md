@@ -2,7 +2,7 @@
 
 Projects and learning from Tom Bailey's [Ultimate SnowPro Core Certification Course & Exam - 2024 course on Udemy](https://www.udemy.com/course/ultimate-snowpro-core-certification-course-exam).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-9867079f-6a22-484e-bbda-0d7ec3f8c374/)
 
 !["Certificate"](./Certificate.jpg)
 
