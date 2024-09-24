@@ -2,7 +2,7 @@
 
 Projects and learning from William Stewart's [Deeply Practical Project Management course on Udemy](https://www.udemy.com/course/deeply-practical-project-management/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-a6169906-378e-4a77-8e19-39f23a752d81/)
 
 !["Certificate"](./Certificate.jpg)
 
