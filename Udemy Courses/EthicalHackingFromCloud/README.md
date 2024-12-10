@@ -2,7 +2,7 @@
 
 Projects and learning from Zaid Sabih's [Learn Ethical Hacking Using The Cloud From Scratch course on Udemy](https://www.udemy.com/course/learn-ethical-hacking-using-the-cloud-from-scratch/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-da871109-3c66-4166-ba51-64c44e7d26fc/)
 
 !["Certificate"](./Certificate.jpg)
 
