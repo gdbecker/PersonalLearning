@@ -3,3 +3,10 @@
 target/
 dbt_packages/
 logs/
+
+*.venv
+*.venv.example
+*.venv.local
+*.venv.staging
+venv/
+.venv/
