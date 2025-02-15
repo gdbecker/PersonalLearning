@@ -2,7 +2,7 @@
 
 Projects and learning from Wadson Guimatsa's [dbt (Data Build Tool): The Analytics Engineering Guide course on Udemy](https://www.udemy.com/course/dbt-data-build-tool-the-analytics-engineering-guide/).
 
-### [Certificate](/)
+### [Certificate](https://www.udemy.com/certificate/UC-01385a77-6170-481e-acc9-aa68bb41590b/)
 
 !["Certificate"](./Certificate.jpg)
 
