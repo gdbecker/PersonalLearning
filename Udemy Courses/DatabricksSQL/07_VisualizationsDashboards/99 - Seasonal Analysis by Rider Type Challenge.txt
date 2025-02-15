@@ -1,0 +1,28 @@
+/*
+The code below has been used to populate the visuals for my solution as part of the Seasonal Analysis by Rider Type Challenge
+*/
+
+
+-- casual_riders dataset
+select count(ride_id), rideable_type from course_project.citibike.vw_jc_bike_data_22
+where member_casual =  'casual'
+and started_at between :start_date and :end_date
+group by 2
+
+-- member_riders dataset
+select count(ride_id), rideable_type from course_project.citibike.vw_jc_bike_data_22
+where member_casual =  'member'
+and started_at between :start_date and :end_date
+group by 2
+
+-- bike_data dataset
+select 
+ride_id,
+member_casual,
+rideable_type,
+started_at,
+trip_duration_mins,
+date_format(started_at, 'EEE') as `Day of Week` 
+from course_project.citibike.vw_jc_bike_data_22
+where started_at between :start_date and :end_date
+

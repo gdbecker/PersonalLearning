@@ -1,0 +1,15 @@
+-- bike_data dataset
+-- Ensure you select the parameter types as date
+select * from course_project.citibike.vw_jc_bike_data_22 where started_at between :start_date and :end_date;
+
+-- most_common_stations dataset
+select 
+concat(start_station_name, '-->', end_station_name) as `Start and End Journey`,
+member_casual as `Rider Type`,
+count(*) as `Number of Trips`
+from course_project.citibike.vw_jc_bike_data_22
+where started_at between :start_date and :end_date
+group by 1,2
+order by 3 desc;
+
+

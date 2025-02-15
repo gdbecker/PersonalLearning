@@ -1,0 +1,9 @@
+/*
+Databricks SQL Dashboards: https://learn.microsoft.com/en-us/azure/databricks/dashboards/
+*/
+
+
+-- bike_data dataset
+select * from course_project.citibike.vw_jc_bike_data_22;
+
+

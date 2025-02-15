@@ -1,0 +1,20 @@
+/*
+Databricks Dashboard Parameters: https://learn.microsoft.com/en-us/azure/databricks/dashboards/parameters
+*/
+
+
+-- bike_data dataset
+-- Ensure you change the parameter types as date
+select * from course_project.citibike.vw_jc_bike_data_22 where started_at between :start_date and :end_date;
+
+-- most_common_stations dataset
+-- Ensure you change the parameter types as date
+select 
+concat(start_station_name, '-->', end_station_name) as `Start and End Journey`,
+count(*) as `Number of Trips`
+from course_project.citibike.vw_jc_bike_data_22
+where started_at between :start_date and :end_date
+group by 1
+order by 2 desc;
+
+

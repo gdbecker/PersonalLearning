@@ -58,3 +58,15 @@ This course is not affiliated, associated, authorized, endorsed by, or in any wa
 - Business analysts who work with data regularly and aim to optimize their workflow with a more in-depth understanding of dbt.
 - Data engineers and data scientists enthusiastic about harnessing dbt's complete capabilities for improved ETL/ELT workflows, testing, and analytics.
 - Professionals transitioning into data roles and seeking a hands-on introduction to a popular data build tool.
+
+### Course Work
+
+#### dbt Cloud
+
+!["dbt Cloud 1"](./08_ProjectScreenshots/dbt%20Cloud%201.png)
+
+!["dbt Cloud 2"](./08_ProjectScreenshots/dbt%20Cloud%202.png)
+
+#### BigQuery Data Warehouse
+
+!["BigQuery 1"](./08_ProjectScreenshots/BigQuery%201.png)
