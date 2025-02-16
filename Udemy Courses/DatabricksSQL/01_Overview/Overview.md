@@ -2,15 +2,176 @@
 
 ### Overview of Databricks
 - [Databricks overview](https://www.databricks.com/spark/comparing-databricks-to-apache-spark)
+- Databricks SQL is the Data Analysis platform on Databricks
+- Databricks SQL s a Serverless Data Warehouse for SQL and BI applications at scale
+- Databricks SQL provides compute resources for queries, visualizations, and dashboards
+- Primary users of Databricks SQL are Data Analysts
+- Databricks was founded by the creators of Apache Spark
+- It's a unified analytics platform designed for data analysts, data engineering, data science, and machine learning workflows
+- Web platform for Apache Spark
+- Supports multiple programming languages
+- Available on Azure, AWS, and GCP
+  - First party service on Azure
+  - Covered by Microsoft's trust and compliance assurances and SLA
+- Databricks Lakehouse Platform
+  - Combines the best features of data lakes and data warehouses, providing organizations with a scalable and reliable solution for managing and analyzing large volumes of data
+  - Great for BI and reporting
+  - Provide ACID compliant transactions
+    - A: Atomicity = all transactions succeed or fail completely
+    - C: Consistency = ensures that a transaction brings the database from one consistent state to another
+    - I: Isolation = concurrent transactions do not interfere with each other
+    - D: Durability = committed changes are permanent
+  - Limitations of data warehouses
+    - Can only work with structured data
+    - Not suitable for big data, analytics, or ML
+  - Pros of lakehouses
+    - Can work with structured, unstructured, and semi-structured data
+    - Suitable for big data, analytics and ML
+    - Low cost alternative to data warehousing (pay per use model)
+  - Cons of lakehouses
+    - Not ACID compliant
+  - Delta Lake
+    - A Data Lakehouse is a Dake Lake that uses the Delta Lake format
+    - This provides ACID compliance, schema enforcement, time travel and data versioning to the Data Lake
+    - Delta Lake is optimized for data science, analytics and ML
+- Databricks Workspace
+  - Consists of three platforms
+  - Data Science and Engineering
+    - Combines data engineering and data science capabilities
+    - Data engineers and data scientists can collaborate on building data pipelines, performing data transformations, and develop data science models
+  - Machine Learning
+    - Provides a collaborative environment for building, training, and deploying machine learning models at scale
+  - Databricks SQL
+    - Allows users to query and analyze data in the data lakehouse using SQL queries
+    - Users can run interactive queries, perform data visualizations, and collaborate with others to perform data analysis tasks (focus of this course)
+- Benefits of the Databricks Lakehouse
+  - Data needs to exist only once
+  - Collaboration
+  - Open source (Delta Lake format is open-source)
+- Databricks architecture
+  - Control Plane
+    - Management and control layer of Databricks
+    - Managed in Databricks own cloud account
+      - Web application
+      - Cluster management
+      - Notebooks
+      - Scheduling
+  - Data Plane
+    - Runtime environment where data processing and data analytics tasks are performed
+    - Managed in your own cloud account
+      - Data storage
+      - Spark clusters
+
+### Intro to Big Data
+- Apache Spark is used to process and analyze big data
+- Big Data = massive amount of data available to organizations that, because of its volume and complexity, is not easily managed or analyzed by many business intelligence tools
+- According to an IDC (International Data Corporation) report, the global datasphere is expected to reach 175 zettabytes by 2025
+  - 1 zettabyte = 1 trillion gigabytes
+- 5 V's of big data
+  - Volume = the amount of data generated and collected
+  - Velocity = the speed at which data is generated and processed
+  - Variety = diverse types and formats of data
+  - Veracity = reliability, accuracy, and trustworthiness of data
+  - Value = business value that can be derived from big data
+- On-premises data warehouse
+  - Vertical scaling requires downtime
+  - Hardware limitations on a single machine
+- Hadoop aimed to provide a distributed file system to handle large datasets (HDFS = Hadoop Distributed File System)
+  - Storage of large amounts of data across a cluster of machines in a fault-tolerant manner
+  - It breaks data into blocks and replicates them across different nodes, ensuring high availability and data reliability
+- Hadoop MapReduce
+  - Parallel processing of large datasets
+- Hadoop pros
+  - Distributed storage and processing
+  - Scalability
+  - Fault tolerance
+  - Can work with wide range of tools and technologies
+  - Can work with structured, semi-structured, and unstructured datasets
+- Hadoop cons
+  - High disk I/O
+  - Complexity: not user-friendly to code in
+- Apache Spark pros
+  - In-memory processing
+  - Up to 100x faster than Hadoop MapReduce
+  - Ease of use
+  - User friendly
+  - APIs in multiple languages
+  - Modularity
+  - Extensibility
+  - Focusses on processing
+  - Can read data from many different sources
+
+### Apache Spark Ecosystem
+- Resilient Distributed Dataset (RDD)
+  - Fundamental data abstraction in Spark
+  - A collection of elements partitioned across the nodes of the cluster that can be operated on in parallel
+  - They are immutable (read-only) collections of objects of varying type
+- DataFrames
+  - Distributed collection of data organized into named columns
+  - It is conceptually equal to a table in a relational database
 
 ### Azure Sign-Up and Overview
 - [Azure sign-up](https://azure.microsoft.com/en-us/)
 - [Azure portal overview](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-overview)
+- Make sure you have at least one Subscription (could be the free trial you have)
+- Make a resource group for this course's Databricks resources
+  - Databricks SQL
+  - Storage Account (named: dlsunitycatalog001)
+- Cost management and billing
+  - You can set limits to make sure you don't go over a certain amount
+  - Do this by adding a budget; connect it to your Subscription and fill in the budget details
+- When using an Azure account connected to a generic email (like gmail)
+  - Microsoft Entra
+  - Manage > Users
+  - User principal name; use this to login into your Azure account instead (keep this secure)
+  - Make sure this user is a Global Administrator (add this assignment if not already added in IAM)
+  - May need to click "forgot password" when trying to sign-in and then get a code to your generic email address to change the password
+  - Then connect this "EXT" user email to the Microsoft Authenticator app when prompted
+
+### Setting up Databricks in Azure
+- Make a resource group: rg-dbw-dev-ea-001
+  - rg = resource group
+  - dbw = databricks workspace
+  - dev = developing
+  - ea = east america
+- Then create a Databricks Workspace within this resource group
+  - Naming: dbw-sql-dev-ea
+  - Pricing tier: premium
+  - Networking: both checked as "No"
+  - Then deploy
+- Launch the workspace you made
 
 ### Databricks in Azure
 - [Databricks premium workspace](https://learn.microsoft.com/en-us/azure/databricks/resources/supported-regions)
 - [Unity Catalog overview](https://learn.microsoft.com/en-us/azure/databricks/admin/#--required-azure-admin-permissions)
+  - Unity Catalog = unified governance solution for data and AI assets on the Lakehouse
+  - Providing centralized access control, auditing, lineage, and data discovery capabilities across Azure Databricks workspaces
+  - Metastore = top-level container for metadata. Represents the metadata, such as the information about the objects being managed by the metastore as well as the access control lists that govern access to those assets
+  - Catalog = first layer of the object hierarchy, used to organize your data assets
+  - Schema = also known as databases, schemas are the second layer of the object hierarchy and contain tables and views
+  - Key benefits
+    - Single place to administer data access policies that apply across all workspaces
+    - Grant permissions using ANSI SQL
+    - Captures audit logs
+    - Captures data lineage
+    - Tag, document and search for data assets
+  - 4 key functional areas of data governance
+    - Data access control
+    - Data access audit
+    - Data lineage
+    - Data discovery
+  - Requirements
+    - Premium Databricks Workspace
+    - Workspace and Metastore should be in the same region
+    - Premium Blob Storage Account as root container
 - [Enabling Unity Catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/get-started)
+  - Create an Azure Data Lake Storage Gen2 account in the same resource group as your Databricks SQL
 - [Azure Data Lake Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)
+  - A data lake is a single, centralized repository where you can store all your data, both structured and unstructured.
+  - Azure Data Lake Storage is a cloud-based, enterprise data lake solution. It's engineered to store massive amounts of data in any format, and to facilitate big data analytical workloads.
 - [Global Administrator pre-Requisite check](https://learn.microsoft.com/en-us/azure/databricks/admin/#--establish-your-first-account-admin)
 - [Pricing calculator for SQL warehouse](https://azure.microsoft.com/en-gb/pricing/calculator/)
+- A SQL Warehouse is a compute resource that lets you run SQL commands on data objects within Databricks SQL
+- They were previously referred to as a SQL Endpoint
+- SQL Warehouse is optimized for SQL and aims to reduce admin and governance
+- Workspace Admins or users with cluster creation privileges can create SQL Warehouses
