@@ -129,19 +129,40 @@
   - Then connect this "EXT" user email to the Microsoft Authenticator app when prompted
 
 ### Setting up Databricks in Azure
-- Make a resource group: rg-dbw-dev-ea-001
+- Make a resource group: rg-dbw-dev-eus-001
   - rg = resource group
   - dbw = databricks workspace
   - dev = developing
-  - ea = east america
+  - eus = east us
 - Then create a Databricks Workspace within this resource group
-  - Naming: dbw-sql-dev-ea
+  - Naming: dbw-sql-dev-eus
   - Pricing tier: premium
   - Networking: both checked as "No"
   - Then deploy
 - Launch the workspace you made
+- Create a new storage account
+  - Assign to same resource group as above
+  - Naming: dlsunitycatalogeus001
+  - Performance: Premium
+  - Premium account type: Block blobs
+  - Redundancy: locally redundant
+  - Advanced: enable hierarchical namespace
+  - Then create a new container called: ucmetastoreeus
+- Create an access connector for Databricks
+  - Assign to same resource group as above
+  - Naming: ac-dbw-we
+  - Review + create, then create
+  - Then go into the storage account made above; go to Access Control IAM
+  - Add > Add Role Assignment
+  - Search for "storage blob data"
+  - Click on "Storage Blob Data Contributor"
+  - Assign access to: Managed identity
+  - Select members > click on "Access Connector for Azure Databricks"
+  - Then click on the access connector you just made
+  - Click on "review and assign"
 
 ### Databricks in Azure
+- To access Databricks account console: https://accounts.azuredatabricks.net
 - [Databricks premium workspace](https://learn.microsoft.com/en-us/azure/databricks/resources/supported-regions)
 - [Unity Catalog overview](https://learn.microsoft.com/en-us/azure/databricks/admin/#--required-azure-admin-permissions)
   - Unity Catalog = unified governance solution for data and AI assets on the Lakehouse
