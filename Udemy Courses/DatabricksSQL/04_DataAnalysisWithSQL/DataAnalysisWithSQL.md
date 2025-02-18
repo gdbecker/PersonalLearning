@@ -1,5 +1,13 @@
 ## 04_ Data Analysis with SQL
 
+### SELECT Statement Recap
+- The back tick `(``)` is not the same as the apostrophe or single quote `(')`
+
+### Note on JC_BIKE_DATA_22
+- This table is intended to store data for the entirety of 2022
+- This table is missing data for one month
+- This is intentional for an upcoming lecture in the "Charts and Dashboards"
+
 ### Filtering Records with the WHERE Clause
 - [Clause: WHERE](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-syntax-qry-select-where)
 
@@ -24,6 +32,8 @@
 
 ### Numerical Functions
 - [Numerical Functions](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-functions-builtin#numeric-scalar-functions)
+- The ROUND function returns the rounded expression to the specified number of digits. Syntax: round(expr, num)
+- The ABS function returns the absolute value of the numeric value. Syntax: abs(expr)
 
 ### Date and Timestamp Functions
 - [Date and Timestamp Functions](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-functions-builtin#date-timestamp-and-interval-functions)
@@ -47,6 +57,13 @@
 
 ### Joining Tables
 - [Clause: JOIN](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-syntax-qry-select-join)
+- Joins are used to combine data from two or more tables based on a related column between them
+- Joins are essential for querying and retrieving data from multiple tables
+- Inner Join = returns only matching records from both tables
+- Left Join = Returns all records from the left table and only matching records from the right table
+- Right Join = Returns all records from the right table and only matching records from the left table
+- Full Outer Join = Returns all records from both tables with NULLs for missing values
+- Use table aliases as needed to keep these join statements cleaner and more simplified
 
 ### Order by and Limit
 - [Clause: ORDER BY](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-syntax-qry-select-orderby)
@@ -57,6 +74,12 @@
 
 ### Views
 - [Clause: CREATE VIEW](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-syntax-ddl-create-view)
+- Use cases/benefits of views
+  - Simplifying complex queries
+  - Enhancing data security
+  - Data privacy and compliance
+  - Performance optimizations
+  - Consolidating data
 
 ### Set Operators
 - [Set operators](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-syntax-qry-select-setops)
