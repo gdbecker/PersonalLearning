@@ -2,7 +2,7 @@
 
 Projects and learning from Malvik Vaghadia's [Databricks SQL for Data Analysts course on Udemy](https://www.udemy.com/course/databricks-sql-for-data-analysts/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-c3e578f9-0888-4c6d-bc60-b0a06145a89f/)
 
 !["Certificate"](./Certificate.jpg)
 
@@ -52,3 +52,6 @@ The curriculum is extensive and will cover a variety of areas including:
 - Anyone wanting to learn Databricks SQL
 - Students studying for the Databricks Data Analyst Certification
 - Aspiring Cloud Data Analysts
+
+### Databricks Workspace during the course
+!["DatabricksWorkspace"](./DatabricksWorkspace.png)

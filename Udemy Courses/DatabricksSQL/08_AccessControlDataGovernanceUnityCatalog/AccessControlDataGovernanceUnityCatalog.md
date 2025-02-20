@@ -16,6 +16,14 @@
   - Grant access and permission to objects
   - Transfer ownership of objects
 
+### Workspace Object Access Control
+- With workspace object access control, you can determine a user's ability to access and modify workspace objects, such as:
+  - Folders
+  - Queries
+  - Alerts
+  - Dashboards
+  - SQL Warehouses
+
 ### SQL Warehouse Access Control
 - [SQL warehouse access control](https://learn.microsoft.com/en-us/azure/databricks/security/auth/access-control/#sql-warehouses)
 
@@ -24,6 +32,7 @@
 
 ### Query Access Control
 - [Query access control](https://learn.microsoft.com/en-us/azure/databricks/security/auth/access-control/#query)
+- Only the owner will retain "Can Manage" privilege when the Sharing Setting is "Run as owner". Other users with "Can Manage" will be downgraded to "Can Run"
 
 ### Dashboard Access Control
 - [Dashboard access control](https://learn.microsoft.com/en-us/azure/databricks/security/auth/access-control/#dashboards)
@@ -40,6 +49,25 @@
 
 ### Redacting Data with Dynamic Views (PII)
 - [Function: is_account_group_member](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/functions/is_account_group_member)
+- Personally Identifiable Information (PII) is information that, when used alone or with other relevant data, can identify an individual
+
+### Data Lineage
+- Data Lineage is a feature of Unity Catalog
+- Refers to the tracking and visualization of the flow of data throughout its lifecycle, from its source to its destination 
+- Lineage is aggregated across all workspaces attached to a Unity Catalog metastore
+- Users must have the correct permissions to view the lineage data
+- Lineage data is retained for 30 days only
 
 ### Delta Sharing Overview
 - [Delta sharing](https://learn.microsoft.com/en-us/azure/databricks/data-sharing/)
+- Delta Sharing is an open protocol for secure data sharing with other organizations regardless of the computing platforms they use
+- Databricks builds Delta Sharing into its Unity Catalog data governance platform, enabling a Databricks user, called a data provider, to share data with a person or group outside of their organization, called a data recipient
+- A "Share" is a read-only collection of tables and table partitions to be shared with one or more recipients
+- A "Recipient" is an object that associates an organization with a credential or secure sharing identifier that allows that organization to access one or more shares
+- Type 1: Open Sharing
+  - You can share data with users outside of your Databricks workspace
+  - Recipients can access the shared data using many computing tools and platforms, including: Power BI, pandas, Apache Spark, Databricks
+- Type 2: Databricks to Databricks Sharing
+  - You can share data with other Databricks users who don't have access to your Unity Catalog metastore
+  - The recipients need to have access to a Databricks workspace that is enabled for Unity Catalog
+  - Can be to/from Databricks in Azure, AWS, or GCP
