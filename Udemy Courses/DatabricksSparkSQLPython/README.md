@@ -2,7 +2,7 @@
 
 Projects and learning from Malvik Vaghadia's [Azure Databricks and Spark SQL (Python) course on Udemy](https://www.udemy.com/course/azure-databricks-and-spark-sql-python/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-cad7ec28-0e84-4b37-84af-4774cc1a4a09/)
 
 !["Certificate"](./Certificate.jpg)
 
