@@ -1,3 +1,13 @@
+.primary-overlay {
+  background: rgba(112, 81, 176, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .main-header {
   background: url(../img/background.jpg);
   background-size: cover;
@@ -10,7 +20,70 @@
   padding-top: 100px;
 }
 
+.main-header-inner {
+  background: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  color: #fff;
+}
+
+.main-header-inner .showcase {
+  padding-top: 50px;
+}
+
 .active-link {
   color: #d847f1;
   font-weight: bold;
+}
+
+.section-developers {
+  position: relative;
+  background: url(../img/code.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top: #333 solid 5px;
+  border-bottom: #333 solid 5px;
+  min-height: 170px;
+}
+
+.section-podcast {
+  position: relative;
+  background: url(../img/circuit.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top: #333 solid 5px;
+  border-bottom: #333 solid 5px;
+  min-height: 170px;
+}
+
+.section-podcast a {
+  margin-top: 30px;
+}
+
+.section-podcast primary-overlay {
+  background: rgba(112, 81, 176, 0.9);
+}
+
+.carousel-item p {
+  font-size: 20px !important;
+}
+
+.tabs .indicator {
+  background-color: #6a1b9a !important;
+}
+
+.section-signup .dropdown-content li > span {
+  color: #9c27b0;
+}
+
+.btn-extend {
+  display: block;
+  width: 100%;
+}
+
+@media(max-width: 500px) {
+  .section-developers, .section-podcast {
+    min-height: 260px;
+  }
 }
