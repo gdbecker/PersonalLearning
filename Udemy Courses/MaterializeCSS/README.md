@@ -2,7 +2,7 @@
 
 Projects and learning from Brad Traversy's [Materialize CSS From Scratch With 5 Projects course on Udemy](https://www.udemy.com/course/materialize-css-from-scratch-with-5-projects/).
 
-### [Certificate](/)
+### [Certificate](https://www.udemy.com/certificate/UC-69040e68-831d-4bab-9a65-124993b97840/)
 
 !["Certificate"](./Certificate.jpg)
 
