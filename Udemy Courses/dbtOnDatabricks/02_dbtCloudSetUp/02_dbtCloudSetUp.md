@@ -5,3 +5,6 @@
 
 ### Databricks General 14-Day Trial
 - Sign up [here](https://www.databricks.com/try-databricks)
+
+### Notes
+- Anytime you use "Preview" or run any dbt commands in dbt Cloud, your SQL Warehouse in Databricks will turn on if it wasn't already
