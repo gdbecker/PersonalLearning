@@ -20,3 +20,17 @@
 
 ### Intro to Unit Testing in dbt
 - [Unit tests](https://docs.getdbt.com/docs/build/unit-tests)
+- Unit Testing = software development practice
+- Tests individual pieces of code (like functions or modules) in isolation
+- Purpose: ensure components work correctly before integration
+- Helps catch errors eagerly, ensuring reliable code
+- dbt deals with SQL and data transformations, not procedural code
+- Unit Tests in dbt validate specific login within data models
+- Focus on ensuring transformations behave as expected
+
+| Generic Tests | Singular Tests | Unit Tests |
+|--|--|--|
+| Predefined tests | Custom SQL queries for specific business logic | Isolate and test specific transformations or model logic |
+| Applied at the column level | Tailored to specific conditions and edge cases | Validate components in isolation |
+| Ensure basic data quality | Focused on catching complex logic errors | Ensure accuracy before integrating into broader workflows |
+| Broad and reusable across multiple models |  | Enforce before model materializes |
