@@ -1,7 +1,9 @@
 {{
     config(
         materialized='incremental',
-        unique_key = 'id'
+        unique_key = 'id',
+        pre_hook = "{{ print('started the run on (config): ' ~ target.database) }}",
+        post_hook = "{{ print('finished the run on (config): ' ~ target.database) }}"
     )
 }}
 
