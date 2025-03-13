@@ -2,7 +2,7 @@
 
 Projects and learning from Malvik Vaghadia's [dbt on Databricks course on Udemy](https://www.udemy.com/course/dbt-on-databricks).
 
-### [Certificate](/)
+### [Certificate](https://www.udemy.com/certificate/UC-0bb36a32-dc5c-4a35-b1b1-2567c41ed4f0/)
 
 !["Certificate"](./Certificate.jpg)
 

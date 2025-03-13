@@ -14,7 +14,7 @@
 - Activate Python virtual env on Windows: ".venv\Scripts\activate" (when you are in the same directory as the venv folder)
 - Activate virtual env when you are accessing the venv from below: "..\.venv\Scripts\activate"
 - Deactivate Python virtual env on Windows: "deactivate"
-- Make a requirements.txt file of Python packages: "pip freeze > requirements.txt"
+- Make a requirements.txt file of Python packages (while venv is activated): "pip freeze > requirements.txt"
 - Run all dbt models: "dbt run"
 - Run all dbt models and replace what was run before with new configurations in dbt_project.yml: "dbt run --full-refresh"
 - Run specific dbt model path: "dbt run -m warehouse.dim_customer"
