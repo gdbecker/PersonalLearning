@@ -2,7 +2,7 @@
 
 Projects and learning from Nikolai Schuler's [Snowflake: The Complete Masterclass course on Udemy](https://www.udemy.com/course/snowflake-masterclass).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-f13c4beb-d8cb-4726-bc7e-e8cb8843bdf9/)
 
 !["Certificate"](./Certificate.jpg)
 
