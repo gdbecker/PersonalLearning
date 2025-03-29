@@ -2,7 +2,7 @@
 
 Projects and learning from Brad Traversy's [Tailwind CSS From Scratch | Learn By Building Projects course on Udemy](https://www.udemy.com/course/tailwind-from-scratch/).
 
-### [Certificate](/)
+### [Certificate](https://www.udemy.com/certificate/UC-589ece5d-16c4-4f8d-8641-053121a442b9/)
 
 !["Certificate"](./Certificate.jpg)
 
