@@ -2,7 +2,7 @@
 
 Projects and learning from Mr. K Talk Tech's [Microsoft Fabric: End to End Data Engineering Project course on Udemy](https://www.udemy.com/course/microsoft-fabric-end-to-end-data-engineering-project/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-c20c6dfd-9a82-403f-a807-34634becab8e/)
 
 !["Certificate"](./Certificate.jpg)
 
