@@ -16,3 +16,6 @@
 - Use these instead of typing out the full absolute path
 - Mac: `-v $(pwd):/app`
 - Windows: `-v "%cd%":/app`
+
+### .dockerignore file
+- Generally, include items here that you don't need to get your apps to successfully run
