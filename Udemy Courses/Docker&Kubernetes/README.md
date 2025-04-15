@@ -2,7 +2,7 @@
 
 Projects and learning from Maximilian Schwarzmüller's [Docker & Kubernetes: The Practical Guide [2025 Edition] course on Udemy](https://www.udemy.com/course/docker-kubernetes-the-practical-guide).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-d8fecf2b-0dd6-489a-a652-06bd5c69f14a/)
 
 !["Certificate"](./Certificate.jpg)
 
