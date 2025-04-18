@@ -1,6 +1,6 @@
-## 01_ Complete AI Guide Intro
+## 01_ ChatGPT Complete Guide Introduction
 
-### Links
+### Resources
 - Leiapix.com
   - https://app.immersity.ai/upload
 - YouTube Video Chrome extension
