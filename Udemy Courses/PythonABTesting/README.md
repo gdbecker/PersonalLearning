@@ -1,8 +1,8 @@
 # Udemy - Bayesian Machine Learning in Python: A/B Testing
 
-Projects and learning from The Lazy Programmer's [Bayesian Machine Learning in Python: A/B Testing course on Udemy]().
+Projects and learning from The Lazy Programmer's [Bayesian Machine Learning in Python: A/B Testing course on Udemy](https://www.udemy.com/course/bayesian-machine-learning-in-python-ab-testing/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-62c8bdf0-b802-44fd-accb-5ba348aee0af/)
 
 !["Certificate"](./Certificate.jpg)
 
