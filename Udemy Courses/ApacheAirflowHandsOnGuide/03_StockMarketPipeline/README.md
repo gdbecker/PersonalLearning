@@ -11,6 +11,15 @@
 - minio: minio/minio123
 - Metabase BI: garrett@gmail.com/everythingisawesome123
 
+### Docker build commands (in order)
+- Navigate to the folder where the Dockerfiles are, and run the build commands for each Spark image
+- Spark Master
+  - `docker build -t airflow/spark-master .`
+- Spark Worker
+  - `docker build -t airflow/spark-worker .`
+- Spark cluster - stock-app
+  - `docker build -t airflow/stock-app .`
+
 ### URLs
 - Airflow home: http://localhost:8080/home
 - Minio: http://localhost:9001/browser
