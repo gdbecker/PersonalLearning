@@ -2,7 +2,7 @@
 
 Projects and learning from Julian Melanson and Benza Maman's [The Complete AI Guide: Learn ChatGPT, Generative AI & More course on Udemy](https://www.udemy.com/course/complete-ai-guide/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-1f884311-822c-4d16-a85a-cdfbe1b6b3e1/)
 
 !["Certificate"](./Certificate.jpg)
 
