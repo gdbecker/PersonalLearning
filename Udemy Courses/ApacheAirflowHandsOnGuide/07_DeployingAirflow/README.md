@@ -9,11 +9,86 @@
 
 ### Steps
 - Make sure that AWS CLI v2 tools are installed on my Mac
+  - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - Make sure that an AWS EC2 instance is up and going
+  - EC2 instance details
+    - At least t2.small (to handle using a Docker container with Rancher)
+    - Follow the video for the specific security rules to apply
+    - Let the user be called `ec2-user`
+  - Commands/steps within EC2 instance to set up Rancher (where the EKS cluster will be initiated)
+    - `sudo yum update -y`
+    - `sudo install docker`
+      - Then type `y` when prompted
+    - `sudo service docker start`
+    - `sudo usermod -a -G docker ec2-user`
+    - Leave the instance connection
+    - Connect to the instance again
+    - `docker run -d --restart=unless-stopped --name rancher --hostname rancher -p 80:80 -p 443:443 rancher/rancher:v2.4.1` (or whichever version of Rancher you want to use. The later the better so you can use a more stable version of the Kubernetes version in Rancher)
+    - `docker ps`
+      - Make sure that the Rancher Docker container is running
+    - Open a new tab with the Public IPs address at the bottom left of the screen
 - Add a new user in AWS IAM (airflow-user) and set up an access key
+  - Apply with programmatic access (or no access to the console needed)
+  - Attach "AdministratorAccess" policy to this user
+  - Apply an access key, and download that .csv
 - Run `aws configure` and use the access key info from a downloaded .csv file to make sure this new user is able to use AWS CLI on my Mac
 - Set up a new repo in AWS ECR (airflow-aws)
   - Click on "Push Commands" and go through the steps
+  - When doing this, be in the folder where your Docker Airflow project is in order to deploy it to your ECR repo you made earlier
   - I used `astro dev init` to get a generic project going, just for this purpose of practicing deployment to AWS EKS
-- Getting Rancher installed in the EC2 cloudshell
-  - `docker run -d --restart=unless-stopped --name rancher --hostname rancher -p 80:80 -p 443:443 rancher/rancher:v2.4.1`
+- Add an EKS cluster in Rancher
+  - Hosted Kubernetes provider: Amazon EKS
+  - Make sure the region is your region where you added the new user earlier
+  - Add access key amd secret key from downloaded .csv file
+  - Select the most recent Kubernetes version
+  - Use the default settings
+  - Takes 10-15 minutes for the EKS cluster to be added
+  - Check status back in AWS Console: CloudFormation
+  - Click on "Launch kubectl"
+  - Commands in the shell
+    - `kubectl version`
+    - `kubectl get nodes`
+    - `kubectl get pod --all-namespaces`
+- Deploy Nginx Ingress with Catalogs (Helm)
+  - Go to Global in Rancher, then Apps
+  - Manage Catalogs button
+  - Enable the Helm app in the catalogs list
+  - Go to Apps again, then Launch
+  - Choose Nginx Ingress 
+  - Define the name "nginx-ingress"
+  - Template version: 1.29.5
+  - Cluster (your cluster name you defined earlier)
+  - Available Roles: Cluster
+  - Leave other settings' defaults
+  - Then Launch
+- Deploy and run Airflow with the Kubernetes Executor on EKS
+  - Back in Rancher, go to Global > Apps > Manage Catalogs
+  - Add Catalog button
+    - "airflow-eks" name
+    - Catalog URL: "https://github.com/marclamberti/airflow-helm-chart.git"
+    - Branch: master
+    - Scope: global
+    - Then Create
+  - Go back to Apps > Launch
+  - Then click on "airflow-k8s"
+    - Name: "airflow-eks"
+    - Target Projects: default
+    - Available Roles: cluster
+    - Launch
+  - Click on the new service you added, wait till it's ready
+  - Click on the Nginx Ingress service you added earlier
+  - Select the port 80 link in the Services area
+  - Should now be at the Airflow UI!
+  - Go back to the kubectl shell terminal
+    - `kubectl get namespaces`
+    - `watch kubectl get pods -n <insert airflow namespace here>`
+- Creating your AWS Services
+  - Rancher UI > Global
+  - Then can delete the EKS cluster from Rancher
+  - AWS Console > Services > EKS
+  - Check to make sure that the EKS cluster is deleting
+  - CloudFormation
+  - Make sure that the stacks are being deleted
+  - Then go to your EC2 instance(s) and stop them
+  - Also stop the load balancer(s)
+  - Delete the Rancher VPC

@@ -1,0 +1,1 @@
+## 33_ Midjourney: Advanced Parameters, Editing Your Photos with Midjourney, and More

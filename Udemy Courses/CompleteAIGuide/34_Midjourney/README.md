@@ -1,0 +1,1 @@
+## 34_ Midjourney: Product Photography, Landing Pages, and Blending Two Images Together

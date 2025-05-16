@@ -9,3 +9,5 @@ airflow-webserver.pid
 webserver_config.py
 airflow.cfg
 airflow.db
+airflow-key.pem
+airflow-user_accessKeys.csv
