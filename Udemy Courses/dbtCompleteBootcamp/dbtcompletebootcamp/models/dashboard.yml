@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://12b9b81e.us2a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=6dTnhyaqZHEne_cCzRY_TilmL9vi8SSj7nQPbC0OAVOsRWfTHX726bgcswVdDk0u
+    description: Executive Dashboard about Airbnb listings and hosts
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_full_moon_reviews')
+    owner:
+      name: Garrett Becker
+      email: garrettdbecker@gmail.com
