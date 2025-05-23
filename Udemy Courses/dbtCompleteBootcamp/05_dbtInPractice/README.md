@@ -22,6 +22,9 @@
 - `dbt compile`
   - Compiles your SQL analyses files and sends to the target folder
   - Can run these compiled queries in your data warehouse
+- `dbt run-operation <macro_name>`
+  - Runs a specific macro (the macro name, not the filename)
+  - Example usage: for running a macro with logging commands
 
 ### Models Overview
 - Models are the basic building blocks of your business logic
