@@ -2,7 +2,7 @@
 
 Projects and learning from Zoltan C. Toth and Miklos (Mike) Petridisz's [The Complete dbt (Data Build Tool) Bootcamp: Zero to Hero course on Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/).
 
-### [Certificate]()
+### [Certificate](https://www.udemy.com/certificate/UC-5cb904da-2bb2-4d29-a7d3-ea1390eb9932/)
 
 !["Certificate"](./Certificate.jpg)
 

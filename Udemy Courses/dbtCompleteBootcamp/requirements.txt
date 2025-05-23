@@ -1,3 +1,20 @@
+# Dagster + DBT
+dagster==1.6.0
 dagster-dbt==0.22.0
+dagster-snowflake==0.22.0
 dagster-webserver==1.6.0
+
+# DBT Snowflake adapter
 dbt-snowflake==1.6.4 # This is kept at 1.6.4 in order to let dagsater work
+
+# Snowflake Python connector and SQLAlchemy support
+snowflake-connector-python==3.6.0
+snowflake-sqlalchemy==1.5.0
+sqlalchemy==1.4.49  # 1.4.x is safer than 2.x for snowflake-sqlalchemy compatibility
+
+# Data handling + HTTP
+pandas==1.5.3
+numpy==1.24.4
+requests==2.31.0
+
+dotenv==0.9.9
